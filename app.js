@@ -7,11 +7,15 @@ const state = {
   openArtists: new Set(),
   openAlbums: new Set(),
   visibleInterpretations: new Set(),
-  loadedFrom: "memory"
+  loadedFrom: "memory",
+  fileHandle: null,
+  hasUnsavedChanges: false
 };
 
 const fileInput = document.querySelector("#fileInput");
 const searchInput = document.querySelector("#searchInput");
+const openJsonButton = document.querySelector("#openJsonButton");
+const saveJsonButton = document.querySelector("#saveJsonButton");
 const exportButton = document.querySelector("#exportButton");
 const clearButton = document.querySelector("#clearButton");
 const libraryElement = document.querySelector("#library");
@@ -22,6 +26,8 @@ init();
 async function init() {
   fileInput.addEventListener("change", handleFileImport);
   searchInput.addEventListener("input", handleSearch);
+  openJsonButton.addEventListener("click", openJsonFile);
+  saveJsonButton.addEventListener("click", saveLibraryToMasterFile);
   exportButton.addEventListener("click", exportLibrary);
   clearButton.addEventListener("click", clearLibrary);
 
@@ -40,6 +46,7 @@ async function loadInitialLibrary() {
     const json = await response.json();
     state.library = normalizeLibrary(json);
     state.loadedFrom = DATA_URL;
+    state.hasUnsavedChanges = false;
     cacheLibrary();
     setStatus(`Loaded ${getSongCount(state.library)} songs from songs.json.`);
   } catch (error) {
@@ -49,13 +56,51 @@ async function loadInitialLibrary() {
     if (cachedLibrary) {
       state.library = cachedLibrary;
       state.loadedFrom = "temporary cache";
+      state.hasUnsavedChanges = true;
       setStatus("songs.json could not be loaded locally. Showing temporary cached data.");
       return;
     }
 
     state.library = createEmptyLibrary();
     state.loadedFrom = "empty";
+    state.hasUnsavedChanges = false;
     setStatus("songs.json could not be loaded. Import a CSV/M3U file, then export songs.json.");
+  }
+}
+
+async function openJsonFile() {
+  if (!window.showOpenFilePicker) {
+    setStatus("Direct file editing needs a Chromium browser. Use Download copy as fallback.");
+    return;
+  }
+
+  try {
+    const [fileHandle] = await window.showOpenFilePicker({
+      multiple: false,
+      types: [
+        {
+          description: "songs.json",
+          accept: {
+            "application/json": [".json"]
+          }
+        }
+      ]
+    });
+    const file = await fileHandle.getFile();
+    const text = await file.text();
+
+    state.library = normalizeLibrary(JSON.parse(text));
+    state.fileHandle = fileHandle;
+    state.loadedFrom = file.name;
+    state.hasUnsavedChanges = false;
+    cacheLibrary();
+    render();
+    setStatus(`Admin mode connected to ${file.name}. Imports and interpretations can now save directly.`);
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      console.error(error);
+      setStatus("Could not open songs.json. Check that the file is valid JSON.");
+    }
   }
 }
 
@@ -79,8 +124,9 @@ async function handleFileImport(event) {
     state.openArtists = new Set(importedSongs.map((song) => song.artist));
     state.openAlbums = new Set(importedSongs.map((song) => getAlbumKey(song.artist, song.album)));
     cacheLibrary();
+    await persistLibraryChange();
     render();
-    setStatus(`Imported ${importedSongs.length} songs. Export Library to create an updated songs.json.`);
+    setStatus(`Imported ${importedSongs.length} songs. ${getPersistenceHint()}`);
   } catch (error) {
     console.error(error);
     setStatus("Import failed. Check the file format and try again.");
@@ -94,14 +140,85 @@ function handleSearch(event) {
   render();
 }
 
-function clearLibrary() {
+async function clearLibrary() {
   state.library = createEmptyLibrary();
   state.openArtists.clear();
   state.openAlbums.clear();
   state.visibleInterpretations.clear();
   localStorage.removeItem(CACHE_KEY);
+  state.hasUnsavedChanges = true;
+  await persistLibraryChange();
   render();
-  setStatus("Local working library cleared. Export if you want to replace songs.json with an empty library.");
+  setStatus(`Local working library cleared. ${getPersistenceHint()}`);
+}
+
+async function saveLibraryToMasterFile() {
+  if (!state.fileHandle) {
+    await saveLibraryWithPicker();
+    return;
+  }
+
+  await writeLibraryToFileHandle(state.fileHandle);
+  state.hasUnsavedChanges = false;
+  state.loadedFrom = state.fileHandle.name || "songs.json";
+  cacheLibrary();
+  render();
+  setStatus("songs.json saved. Remaining manual step: commit and push to GitHub.");
+}
+
+async function saveLibraryWithPicker() {
+  if (!window.showSaveFilePicker) {
+    exportLibrary();
+    setStatus("Direct save is not available in this browser. Downloaded a songs.json copy instead.");
+    return;
+  }
+
+  try {
+    const fileHandle = await window.showSaveFilePicker({
+      suggestedName: "songs.json",
+      types: [
+        {
+          description: "songs.json",
+          accept: {
+            "application/json": [".json"]
+          }
+        }
+      ]
+    });
+
+    state.fileHandle = fileHandle;
+    await saveLibraryToMasterFile();
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      console.error(error);
+      setStatus("Could not save songs.json.");
+    }
+  }
+}
+
+async function persistLibraryChange() {
+  state.hasUnsavedChanges = true;
+  cacheLibrary();
+
+  if (!state.fileHandle) {
+    return false;
+  }
+
+  try {
+    await writeLibraryToFileHandle(state.fileHandle);
+    state.hasUnsavedChanges = false;
+    return true;
+  } catch (error) {
+    console.error(error);
+    setStatus("Could not write to songs.json. Use Save songs.json or Download copy.");
+    return false;
+  }
+}
+
+async function writeLibraryToFileHandle(fileHandle) {
+  const writable = await fileHandle.createWritable();
+  await writable.write(`${JSON.stringify(sortLibrary(state.library), null, 2)}\n`);
+  await writable.close();
 }
 
 function exportLibrary() {
@@ -511,7 +628,7 @@ function render() {
     libraryElement.append(createArtistCard(artist));
   });
 
-  setStatus(`Showing ${visibleSongs} of ${totalSongs} songs. Source: ${state.loadedFrom}.`);
+  setStatus(`Showing ${visibleSongs} of ${totalSongs} songs. Source: ${state.loadedFrom}.${state.hasUnsavedChanges ? " Unsaved changes." : ""}`);
 }
 
 function createArtistCard(artist) {
@@ -604,13 +721,13 @@ function createSongRow(artistName, albumName, song) {
   interpretation.classList.toggle("is-visible", state.visibleInterpretations.has(songKey));
   interpretation.innerHTML = renderInterpretation(song);
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click", async () => {
     let generatedNewInterpretation = false;
 
     if (!hasInterpretation(song)) {
       writeGeneratedInterpretation(artistName, albumName, song.title);
       state.visibleInterpretations.add(songKey);
-      cacheLibrary();
+      await persistLibraryChange();
       generatedNewInterpretation = true;
     } else {
       toggleSetValue(state.visibleInterpretations, songKey);
@@ -619,7 +736,7 @@ function createSongRow(artistName, albumName, song) {
     render();
 
     if (generatedNewInterpretation) {
-      setStatus("Generated a placeholder interpretation in the JSON data structure. Export Library to save songs.json.");
+      setStatus(`Generated a placeholder interpretation in the JSON data structure. ${getPersistenceHint()}`);
     }
   });
 
@@ -742,6 +859,18 @@ function loadCachedLibrary() {
     console.warn(error);
     return null;
   }
+}
+
+function getPersistenceHint() {
+  if (state.fileHandle && !state.hasUnsavedChanges) {
+    return "songs.json was updated directly. Remaining manual step: commit and push to GitHub.";
+  }
+
+  if (state.fileHandle) {
+    return "Use Save songs.json, then commit and push to GitHub.";
+  }
+
+  return "Open songs.json for direct admin saving, or use Download copy as fallback.";
 }
 
 function setStatus(message) {

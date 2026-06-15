@@ -402,7 +402,7 @@ h1 {
   }
 
   .actions {
-    grid-template-columns: 160px 150px 112px;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
   }
 
   .library {
