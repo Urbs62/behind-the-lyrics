@@ -55,9 +55,9 @@ button {
 .hero {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-  padding: 4px 2px 2px;
+  gap: 22px;
+  margin-bottom: 12px;
+  padding: 6px 2px 4px;
   border: 0;
   border-radius: var(--radius-lg);
   background: transparent;
@@ -66,15 +66,31 @@ button {
 
 .brand-logo {
   display: block;
-  flex: 0 0 clamp(40px, 8vw, 54px);
-  width: clamp(40px, 8vw, 54px);
-  height: clamp(40px, 8vw, 54px);
+  flex: 0 0 auto;
+  width: auto;
+  height: 72px;
+  max-width: min(58vw, 320px);
   border: 1px solid rgba(154, 164, 178, 0.18);
-  border-radius: 10px;
+  border-radius: 12px;
   background: #10141a;
   object-fit: contain;
   object-position: center;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.26);
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 h1,
@@ -91,9 +107,9 @@ h1 {
 }
 
 .hero p {
-  margin-top: 5px;
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 0.9rem;
+  line-height: 1.35;
 }
 
 .toolbar,
@@ -519,6 +535,11 @@ h1 {
 @media (min-width: 720px) {
   .app-shell {
     padding: 22px 24px 48px;
+  }
+
+  .brand-logo {
+    height: 96px;
+    max-width: min(42vw, 430px);
   }
 
   .actions {
