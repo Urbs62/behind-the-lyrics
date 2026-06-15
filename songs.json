@@ -336,6 +336,667 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Talking Heads",
+      "albums": [
+        {
+          "name": "77",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Don't Worry About the Government",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "First Week Last Week...Carefree",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Happy Day",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "I Feel It In My Heart",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "I Wish You Wouldn't Say That",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "New Feeling",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "No Compassion",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Pulled Up",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Sugar On My Tongue",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Book I Read",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Fear of Music",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Cities",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Cities [Alternate Version][#][-]",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Heaven",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Life During Wartime",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Life During Wartime [Alternate Version][#][-]",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Little Creatures",
+          "cover": "",
+          "songs": [
+            {
+              "title": "And She Was",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Road To Nowhere",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Lady Don't Mind",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "More Songs About Buildings and Food",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Stay Hungry",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Thank You for Sending Me an An",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Thank You For Sending Me An Angel (Country Angel Version)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Big Country",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Big Country (Alternate Version)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Girls Want to Be With The",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Good Thing",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Naked",
+          "cover": "",
+          "songs": [
+            {
+              "title": "(Nothing but) Flowers",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Blind",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Mr. Jones",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Ruby Dear",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Sax And Violins (Bonus Track)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Once In A Lifetime",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Lifetime Piling Up",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Remain In Light",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Born Under Punches (The Heat Goes On)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Crosseyed and Painless",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Fela's Riff [unfinished outtake]",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Houses in Motion",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Listening Wind",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Once in a Lifetime",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Seen and Not Seen",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Great Curve",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Sand in the Vaseline (1976-1992)",
+          "cover": "",
+          "songs": [
+            {
+              "title": "This Must Be the Place (Naive Melody)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Speaking in Tongues",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Girlfriend Is Better",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Making Flippy Floppy",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Pull Up the Roots",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Slippery People",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "This Must Be the Place (Naive Melody)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Stop Making Sense (Live Special Edition)",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Crosseyed And Painless",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Genius Of Love (Tom Tom Club)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Girlfriend Is Better",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Heaven",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Life During Wartime",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Once In A Lifetime",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Slippery People",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Thank You For Sending Me An Angel",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "This Must Be The Place (Naive Melody)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "What A Day That Was",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "The Name Of This Band Is Talking Heads",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Born Under Punches (The Heat Goes On)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Cities",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Crosseyed And Painless",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Don't Worry About The Government",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Heaven",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Houses In Motion",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "I'm Not In Love",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Life During Wartime",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Once In A Lifetime",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Stay Hungry",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Big Country",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Book I Read",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Great Curve",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "True Stories",
+          "cover": "",
+          "songs": [
+            {
+              "title": "City of Dreams",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Papa Legba",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Papa Legba (Pops Staples Vocal Version)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Radio Head",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Wild Wild Life",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        }
+      ]
     }
   ]
 }
