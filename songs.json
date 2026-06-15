@@ -1,6 +1,570 @@
 {
   "artists": [
     {
+      "name": "Basia Bulat",
+      "albums": [
+        {
+          "name": "Are You in Love",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Are You in Love_",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Electric Roses",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Fables",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Love is at the End of the World",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "No Control",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Pale Blue",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Your Girl",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "Basia's Palace",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Curtain Call",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Disco Polo",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "My Angel",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "Good Advice",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Good Advice",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "In The Name Of",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Infamous",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Someday Soon",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "The Garden",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "Heart Of My Own",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Heart Of My Own",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "Oh, My Darling",
+          "cover": "",
+          "songs": [
+            {
+              "title": "A Secret",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Before I Knew",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Snakes and Ladders",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "Tall Tall Shadow",
+          "cover": "",
+          "songs": [
+            {
+              "title": "From Now On",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Never Let Me Go",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Someone",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "The Garden",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Are You in Love_ (The Garden Vers",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Fables (The Garden Version)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Good Advice (The Garden Version)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Heart of My Own (The Garden Versi",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "In the Name of (The Garden Versio",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Infamous (The Garden Version)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "The Garden (The Garden Version)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "The Pilgriming Vine (The Garden V",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bill Callahan",
+      "albums": [
+        {
+          "name": "Apocalypse",
+          "cover": "",
+          "songs": [
+            {
+              "title": "One Fine Morning",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "Breakfast",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Another Song",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "Dream River",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Javelin Unlanding",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Small Plane",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "Gold Record",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Breakfast",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Pigeons",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "Rough Travel For A Rare Thing",
+          "cover": "",
+          "songs": [
+            {
+              "title": "The Well",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "Sometimes I Wish We Were An Eagle",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Eid Ma Clack Shaw",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Faith-Void",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Rococo Zephyr",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Too Many Birds",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "Woke On A Whaleheart",
+          "cover": "",
+          "songs": [
+            {
+              "title": "A Man Needs A Woman Or A Man To Be A Man",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Day",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Diamond Dancer",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Night",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Sycamore",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "The Wheel",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Bob Dylan",
       "albums": [
         {
@@ -1509,6 +2073,225 @@
             },
             {
               "title": "World Gone Wrong",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hurray for the Riff Raff",
+      "albums": [
+        {
+          "name": "Life on Earth",
+          "cover": "",
+          "songs": [
+            {
+              "title": "KiN",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "LIFE ON EARTH",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "RHODODENDRON",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "WOLVES",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "Small Town Heroes",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Blue Ridge Mountain",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Forever Is Just a Day",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Good Time Blues (An Outlaw's Lament)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Small Town Heroes",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "St. Roch Blues",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "The Body Electric",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "The New SF Bay Blues",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "The Navigator",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Fourteen Floors",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Halfway There",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Hungry Ghost",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Living In the City",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Settle",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            }
+          ]
+        },
+        {
+          "name": "The Past Is Still Alive",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Ogallala",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "Snake Plant (The Past Is Still Al",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
+            },
+            {
+              "title": "The World Is Dangerous",
               "summary": "",
               "context": "",
               "interpretation": "",
