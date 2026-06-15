@@ -16,23 +16,24 @@
         </div>
       </header>
 
-      <section class="toolbar" aria-label="Import and search">
+      <section class="toolbar" aria-label="Import, export and search">
         <label class="search-field">
-          <span>Sök</span>
-          <input id="searchInput" type="search" placeholder="Artist, album eller låt">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Artist, album or song">
         </label>
 
         <div class="actions">
           <label class="file-button">
-            Importera CSV/M3U
+            Import CSV/M3U
             <input id="fileInput" type="file" accept=".csv,.m3u,.m3u8,text/csv,audio/x-mpegurl">
           </label>
-          <button id="clearButton" class="ghost-button" type="button">Rensa data</button>
+          <button id="exportButton" class="secondary-button" type="button">Export Library</button>
+          <button id="clearButton" class="ghost-button" type="button">Clear data</button>
         </div>
       </section>
 
       <section class="status-panel" aria-live="polite">
-        <p id="statusText">Importera en CSV-, M3U- eller M3U8-fil för att komma igång.</p>
+        <p id="statusText">Loading songs.json...</p>
       </section>
 
       <section id="library" class="library" aria-label="Imported music library"></section>

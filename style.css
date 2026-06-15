@@ -150,6 +150,7 @@ h1 {
 }
 
 .file-button,
+.secondary-button,
 .ghost-button,
 .generate-button {
   display: grid;
@@ -166,6 +167,12 @@ h1 {
   border: 1px solid #465469;
   background: #d8dee8;
   color: #11151b;
+}
+
+.secondary-button {
+  border: 1px solid var(--line);
+  background: var(--panel-soft);
+  color: var(--text);
 }
 
 .file-button input {
@@ -317,6 +324,7 @@ h1 {
 }
 
 .file-button:hover,
+.secondary-button:hover,
 .ghost-button:hover,
 .generate-button:hover,
 .artist-header:hover,
@@ -394,7 +402,7 @@ h1 {
   }
 
   .actions {
-    grid-template-columns: 178px 128px;
+    grid-template-columns: 160px 150px 112px;
   }
 
   .library {

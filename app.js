@@ -1,27 +1,62 @@
-const STORAGE_KEY = "behindTheLyrics.library.v1";
+const DATA_URL = "songs.json";
+const CACHE_KEY = "behindTheLyrics.libraryCache.v2";
 
 const state = {
-  songs: [],
+  library: createEmptyLibrary(),
   search: "",
   openArtists: new Set(),
   openAlbums: new Set(),
-  visibleInterpretations: new Set()
+  visibleInterpretations: new Set(),
+  loadedFrom: "memory"
 };
 
 const fileInput = document.querySelector("#fileInput");
 const searchInput = document.querySelector("#searchInput");
+const exportButton = document.querySelector("#exportButton");
 const clearButton = document.querySelector("#clearButton");
-const library = document.querySelector("#library");
+const libraryElement = document.querySelector("#library");
 const statusText = document.querySelector("#statusText");
 
 init();
 
-function init() {
-  state.songs = loadSongs();
+async function init() {
   fileInput.addEventListener("change", handleFileImport);
   searchInput.addEventListener("input", handleSearch);
+  exportButton.addEventListener("click", exportLibrary);
   clearButton.addEventListener("click", clearLibrary);
+
+  await loadInitialLibrary();
   render();
+}
+
+async function loadInitialLibrary() {
+  try {
+    const response = await fetch(DATA_URL, { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`Could not load ${DATA_URL}: ${response.status}`);
+    }
+
+    const json = await response.json();
+    state.library = normalizeLibrary(json);
+    state.loadedFrom = DATA_URL;
+    cacheLibrary();
+    setStatus(`Loaded ${getSongCount(state.library)} songs from songs.json.`);
+  } catch (error) {
+    console.warn(error);
+    const cachedLibrary = loadCachedLibrary();
+
+    if (cachedLibrary) {
+      state.library = cachedLibrary;
+      state.loadedFrom = "temporary cache";
+      setStatus("songs.json could not be loaded locally. Showing temporary cached data.");
+      return;
+    }
+
+    state.library = createEmptyLibrary();
+    state.loadedFrom = "empty";
+    setStatus("songs.json could not be loaded. Import a CSV/M3U file, then export songs.json.");
+  }
 }
 
 async function handleFileImport(event) {
@@ -36,19 +71,19 @@ async function handleFileImport(event) {
     const importedSongs = parseImport(text, file.name);
 
     if (!importedSongs.length) {
-      setStatus("Filen kunde läsas, men inga låtar hittades.");
+      setStatus("The file was read, but no songs were found.");
       return;
     }
 
-    state.songs = mergeSongs(state.songs, importedSongs);
+    state.library = mergeSongsIntoLibrary(state.library, importedSongs);
     state.openArtists = new Set(importedSongs.map((song) => song.artist));
     state.openAlbums = new Set(importedSongs.map((song) => getAlbumKey(song.artist, song.album)));
-    saveSongs(state.songs);
+    cacheLibrary();
     render();
-    setStatus(`Importerade ${importedSongs.length} låtar. Biblioteket innehåller nu ${state.songs.length} låtar.`);
+    setStatus(`Imported ${importedSongs.length} songs. Export Library to create an updated songs.json.`);
   } catch (error) {
     console.error(error);
-    setStatus("Något gick fel vid importen. Kontrollera filformatet och försök igen.");
+    setStatus("Import failed. Check the file format and try again.");
   } finally {
     fileInput.value = "";
   }
@@ -60,13 +95,28 @@ function handleSearch(event) {
 }
 
 function clearLibrary() {
-  state.songs = [];
+  state.library = createEmptyLibrary();
   state.openArtists.clear();
   state.openAlbums.clear();
   state.visibleInterpretations.clear();
-  localStorage.removeItem(STORAGE_KEY);
+  localStorage.removeItem(CACHE_KEY);
   render();
-  setStatus("All importerad data är rensad.");
+  setStatus("Local working library cleared. Export if you want to replace songs.json with an empty library.");
+}
+
+function exportLibrary() {
+  const json = JSON.stringify(sortLibrary(state.library), null, 2);
+  const blob = new Blob([`${json}\n`], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "songs.json";
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+  setStatus("Exported the complete library as songs.json.");
 }
 
 function parseImport(text, fileName) {
@@ -97,7 +147,7 @@ function parseCsv(text) {
 
   return rows
     .slice(1)
-    .map((row) => normalizeSong({
+    .map((row) => normalizeImportedSong({
       artist: row[artistIndex],
       album: row[albumIndex],
       title: row[titleIndex]
@@ -166,7 +216,7 @@ function parseM3u(text) {
     }
 
     const pathInfo = parsePathInfo(line);
-    songs.push(normalizeSong({
+    songs.push(normalizeImportedSong({
       artist: pendingExtinf?.artist || pathInfo.artist,
       album: pathInfo.album || "Unknown Album",
       title: pendingExtinf?.title || pathInfo.title
@@ -178,7 +228,8 @@ function parseM3u(text) {
 }
 
 function parseExtinf(line) {
-  const metadata = line.slice(line.indexOf(",") + 1).trim();
+  const commaIndex = line.indexOf(",");
+  const metadata = commaIndex === -1 ? "" : line.slice(commaIndex + 1).trim();
   const separator = metadata.indexOf(" - ");
 
   if (separator === -1) {
@@ -235,7 +286,104 @@ function cleanAlbumName(folderName) {
     .trim() || "Unknown Album";
 }
 
+function mergeSongsIntoLibrary(library, importedSongs) {
+  const nextLibrary = normalizeLibrary(library);
+
+  importedSongs.forEach((importedSong) => {
+    const artist = getOrCreateArtist(nextLibrary, importedSong.artist);
+    const album = getOrCreateAlbum(artist, importedSong.album);
+    const existingSong = album.songs.find((song) => song.title.toLowerCase() === importedSong.title.toLowerCase());
+
+    if (!existingSong) {
+      album.songs.push(createSong(importedSong.title));
+    }
+  });
+
+  return sortLibrary(nextLibrary);
+}
+
+function getOrCreateArtist(library, artistName) {
+  let artist = library.artists.find((item) => item.name.toLowerCase() === artistName.toLowerCase());
+
+  if (!artist) {
+    artist = {
+      name: artistName,
+      albums: []
+    };
+    library.artists.push(artist);
+  }
+
+  return artist;
+}
+
+function getOrCreateAlbum(artist, albumName) {
+  let album = artist.albums.find((item) => item.name.toLowerCase() === albumName.toLowerCase());
+
+  if (!album) {
+    album = {
+      name: albumName,
+      cover: "",
+      songs: []
+    };
+    artist.albums.push(album);
+  }
+
+  return album;
+}
+
+function normalizeLibrary(library) {
+  const artists = Array.isArray(library?.artists) ? library.artists : [];
+
+  return sortLibrary({
+    artists: artists.map(normalizeArtist).filter(Boolean)
+  });
+}
+
+function normalizeArtist(artist) {
+  const name = cleanText(artist?.name);
+
+  if (!name) {
+    return null;
+  }
+
+  return {
+    name,
+    albums: (Array.isArray(artist.albums) ? artist.albums : [])
+      .map(normalizeAlbum)
+      .filter(Boolean)
+  };
+}
+
+function normalizeAlbum(album) {
+  const name = cleanText(album?.name) || "Unknown Album";
+
+  return {
+    name,
+    cover: cleanText(album?.cover),
+    songs: (Array.isArray(album?.songs) ? album.songs : [])
+      .map(normalizeSong)
+      .filter(Boolean)
+  };
+}
+
 function normalizeSong(song) {
+  const title = cleanText(song?.title);
+
+  if (!title) {
+    return null;
+  }
+
+  return {
+    title,
+    summary: cleanText(song?.summary),
+    context: cleanText(song?.context),
+    interpretation: cleanText(song?.interpretation),
+    feeling: cleanText(song?.feeling),
+    tags: Array.isArray(song?.tags) ? song.tags.map(cleanText).filter(Boolean) : []
+  };
+}
+
+function normalizeImportedSong(song) {
   const artist = cleanText(song.artist) || "Unknown Artist";
   const album = cleanText(song.album) || "Unknown Album";
   const title = cleanText(song.title);
@@ -247,90 +395,123 @@ function normalizeSong(song) {
   return { artist, album, title };
 }
 
+function createSong(title) {
+  return {
+    title,
+    summary: "",
+    context: "",
+    interpretation: "",
+    feeling: "",
+    tags: []
+  };
+}
+
+function createEmptyLibrary() {
+  return {
+    artists: []
+  };
+}
+
+function sortLibrary(library) {
+  const sorted = normalizeLibraryWithoutSorting(library);
+
+  sorted.artists.sort((a, b) => a.name.localeCompare(b.name));
+  sorted.artists.forEach((artist) => {
+    artist.albums.sort((a, b) => a.name.localeCompare(b.name));
+    artist.albums.forEach((album) => {
+      album.songs.sort((a, b) => a.title.localeCompare(b.title));
+    });
+  });
+
+  return sorted;
+}
+
+function normalizeLibraryWithoutSorting(library) {
+  return {
+    artists: (Array.isArray(library?.artists) ? library.artists : []).map((artist) => ({
+      name: cleanText(artist.name),
+      albums: (Array.isArray(artist.albums) ? artist.albums : []).map((album) => ({
+        name: cleanText(album.name) || "Unknown Album",
+        cover: cleanText(album.cover),
+        songs: (Array.isArray(album.songs) ? album.songs : []).map((song) => ({
+          title: cleanText(song.title),
+          summary: cleanText(song.summary),
+          context: cleanText(song.context),
+          interpretation: cleanText(song.interpretation),
+          feeling: cleanText(song.feeling),
+          tags: Array.isArray(song.tags) ? song.tags.map(cleanText).filter(Boolean) : []
+        })).filter((song) => song.title)
+      }))
+    })).filter((artist) => artist.name)
+  };
+}
+
 function cleanText(value) {
   return String(value || "").replace(/\s+/g, " ").trim();
 }
 
-function mergeSongs(existingSongs, incomingSongs) {
-  const byKey = new Map();
-
-  [...existingSongs, ...incomingSongs].forEach((song) => {
-    byKey.set(getSongKey(song), song);
-  });
-
-  return sortSongs([...byKey.values()]);
-}
-
-function sortSongs(songs) {
-  return [...songs].sort((a, b) => {
-    return a.artist.localeCompare(b.artist)
-      || a.album.localeCompare(b.album)
-      || a.title.localeCompare(b.title);
-  });
-}
-
-function buildArtists(songs) {
-  const artistMap = new Map();
-
-  sortSongs(songs).forEach((song) => {
-    if (!artistMap.has(song.artist)) {
-      artistMap.set(song.artist, {
-        name: song.artist,
-        albums: new Map()
-      });
-    }
-
-    const artist = artistMap.get(song.artist);
-    if (!artist.albums.has(song.album)) {
-      artist.albums.set(song.album, {
-        name: song.album,
-        songs: []
-      });
-    }
-
-    artist.albums.get(song.album).songs.push(song);
-  });
-
-  return [...artistMap.values()].map((artist) => ({
-    name: artist.name,
-    albums: [...artist.albums.values()]
-  }));
-}
-
-function getFilteredSongs() {
+function getFilteredLibrary() {
   if (!state.search) {
-    return state.songs;
+    return state.library;
   }
 
-  return state.songs.filter((song) => {
-    const haystack = `${song.artist} ${song.album} ${song.title}`.toLowerCase();
-    return haystack.includes(state.search);
-  });
+  const artists = state.library.artists
+    .map((artist) => {
+      const albums = artist.albums
+        .map((album) => {
+          const songs = album.songs.filter((song) => {
+            const haystack = `${artist.name} ${album.name} ${song.title}`.toLowerCase();
+            return haystack.includes(state.search);
+          });
+
+          if (songs.length || `${artist.name} ${album.name}`.toLowerCase().includes(state.search)) {
+            return {
+              ...album,
+              songs: songs.length ? songs : album.songs
+            };
+          }
+
+          return null;
+        })
+        .filter(Boolean);
+
+      if (albums.length || artist.name.toLowerCase().includes(state.search)) {
+        return {
+          ...artist,
+          albums: albums.length ? albums : artist.albums
+        };
+      }
+
+      return null;
+    })
+    .filter(Boolean);
+
+  return { artists };
 }
 
 function render() {
-  const filteredSongs = getFilteredSongs();
-  const artists = buildArtists(filteredSongs);
+  const filteredLibrary = getFilteredLibrary();
+  const totalSongs = getSongCount(state.library);
+  const visibleSongs = getSongCount(filteredLibrary);
 
-  library.innerHTML = "";
+  libraryElement.innerHTML = "";
 
-  if (!state.songs.length) {
-    library.append(createEmptyState("Ingen musik importerad an."));
-    setStatus("Importera en CSV-, M3U- eller M3U8-fil för att komma igång.");
+  if (!totalSongs) {
+    libraryElement.append(createEmptyState("No music library loaded yet."));
     return;
   }
 
-  if (!filteredSongs.length) {
-    library.append(createEmptyState("Inga traffar for sokningen."));
-    setStatus(`Visar 0 av ${state.songs.length} låtar.`);
+  if (!visibleSongs) {
+    libraryElement.append(createEmptyState("No matches for this search."));
+    setStatus(`Showing 0 of ${totalSongs} songs.`);
     return;
   }
 
-  artists.forEach((artist) => {
-    library.append(createArtistCard(artist));
+  filteredLibrary.artists.forEach((artist) => {
+    libraryElement.append(createArtistCard(artist));
   });
 
-  setStatus(`Visar ${filteredSongs.length} av ${state.songs.length} låtar.`);
+  setStatus(`Showing ${visibleSongs} of ${totalSongs} songs. Source: ${state.loadedFrom}.`);
 }
 
 function createArtistCard(artist) {
@@ -345,7 +526,7 @@ function createArtistCard(artist) {
   header.innerHTML = `
     <span class="artist-title">
       <strong>${escapeHtml(artist.name)}</strong>
-      <span class="count">${artist.albums.length} album / ${songCount} låtar</span>
+      <span class="count">${artist.albums.length} albums / ${songCount} songs</span>
     </span>
     <span class="chevron">${artistCard.classList.contains("is-open") ? "v" : ">"}</span>
   `;
@@ -376,7 +557,7 @@ function createAlbumCard(artistName, album) {
   header.innerHTML = `
     <span class="album-title">
       <strong>${escapeHtml(album.name)}</strong>
-      <span class="count">${album.songs.length} låtar</span>
+      <span class="count">${album.songs.length} songs</span>
     </span>
     <span class="chevron">${albumCard.classList.contains("is-open") ? "v" : ">"}</span>
   `;
@@ -388,15 +569,15 @@ function createAlbumCard(artistName, album) {
   const body = document.createElement("div");
   body.className = "album-body";
   album.songs.forEach((song) => {
-    body.append(createSongRow(song));
+    body.append(createSongRow(artistName, album.name, song));
   });
 
   albumCard.append(header, body);
   return albumCard;
 }
 
-function createSongRow(song) {
-  const songKey = getSongKey(song);
+function createSongRow(artistName, albumName, song) {
+  const songKey = getSongKey(artistName, albumName, song.title);
   const songRow = document.createElement("article");
   songRow.className = "song-row";
 
@@ -404,62 +585,120 @@ function createSongRow(song) {
   songMain.className = "song-main";
   songMain.innerHTML = `
     <strong>${escapeHtml(song.title)}</strong>
-    <span>${escapeHtml(song.artist)} / ${escapeHtml(song.album)}</span>
+    <span>${escapeHtml(artistName)} / ${escapeHtml(albumName)}</span>
   `;
 
   const button = document.createElement("button");
   button.className = "generate-button";
   button.type = "button";
-  button.textContent = state.visibleInterpretations.has(songKey)
-    ? "Hide interpretation"
+  button.textContent = hasInterpretation(song)
+    ? "Show interpretation"
     : "Generate interpretation";
+
+  if (state.visibleInterpretations.has(songKey)) {
+    button.textContent = "Hide interpretation";
+  }
 
   const interpretation = document.createElement("section");
   interpretation.className = "interpretation";
   interpretation.classList.toggle("is-visible", state.visibleInterpretations.has(songKey));
-  interpretation.innerHTML = renderInterpretation(generateInterpretation(song));
+  interpretation.innerHTML = renderInterpretation(song);
 
   button.addEventListener("click", () => {
-    toggleSetValue(state.visibleInterpretations, songKey);
+    let generatedNewInterpretation = false;
+
+    if (!hasInterpretation(song)) {
+      writeGeneratedInterpretation(artistName, albumName, song.title);
+      state.visibleInterpretations.add(songKey);
+      cacheLibrary();
+      generatedNewInterpretation = true;
+    } else {
+      toggleSetValue(state.visibleInterpretations, songKey);
+    }
+
     render();
+
+    if (generatedNewInterpretation) {
+      setStatus("Generated a placeholder interpretation in the JSON data structure. Export Library to save songs.json.");
+    }
   });
 
   songRow.append(songMain, button, interpretation);
   return songRow;
 }
 
+function writeGeneratedInterpretation(artistName, albumName, songTitle) {
+  const song = findSong(state.library, artistName, albumName, songTitle);
+
+  if (!song) {
+    return;
+  }
+
+  const generated = generateInterpretation({
+    artist: artistName,
+    album: albumName,
+    title: songTitle
+  });
+
+  song.summary = generated.summary;
+  song.context = generated.context;
+  song.interpretation = generated.interpretation;
+  song.feeling = generated.feeling;
+  song.tags = generated.tags;
+}
+
 function generateInterpretation(song) {
   return {
-    oneLiner: `En möjlig tolkning av teman och sammanhang i "${song.title}" av ${song.artist}.`,
-    context: `Den här sektionen kommer senare att innehålla bakgrund och sammanhang för låten från albumet "${song.album}".`,
-    possibleInterpretation: "Här kommer en kort AI-genererad tolkning utan att visa själva låttexten.",
-    feeling: "Melankolisk, reflekterande eller energisk beroende på låt.",
+    summary: `A possible reading of the themes and context around "${song.title}" by ${song.artist}.`,
+    context: `This section will later contain background and context for the song from the album "${song.album}".`,
+    interpretation: "A short AI-generated interpretation will appear here without showing the lyrics.",
+    feeling: "Melancholic, reflective or energetic depending on the song.",
     tags: ["Theme", "Mood", "Story"]
   };
 }
 
-function renderInterpretation(interpretation) {
+function renderInterpretation(song) {
+  const interpretation = hasInterpretation(song)
+    ? song
+    : {
+      summary: "No interpretation generated yet.",
+      context: "",
+      interpretation: "",
+      feeling: "",
+      tags: []
+    };
+
   return `
     <div class="interpretation-block">
-      <h4>One-liner</h4>
-      <p>${escapeHtml(interpretation.oneLiner)}</p>
+      <h4>Summary</h4>
+      <p>${escapeHtml(interpretation.summary)}</p>
     </div>
     <div class="interpretation-block">
       <h4>Context</h4>
-      <p>${escapeHtml(interpretation.context)}</p>
+      <p>${escapeHtml(interpretation.context || "Pending generation.")}</p>
     </div>
     <div class="interpretation-block">
       <h4>Possible interpretation</h4>
-      <p>${escapeHtml(interpretation.possibleInterpretation)}</p>
+      <p>${escapeHtml(interpretation.interpretation || "Pending generation.")}</p>
     </div>
     <div class="interpretation-block">
       <h4>Feeling</h4>
-      <p>${escapeHtml(interpretation.feeling)}</p>
+      <p>${escapeHtml(interpretation.feeling || "Pending generation.")}</p>
     </div>
     <div class="tags">
-      ${interpretation.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
+      ${(interpretation.tags || []).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
     </div>
   `;
+}
+
+function hasInterpretation(song) {
+  return Boolean(song.summary || song.context || song.interpretation || song.feeling || song.tags.length);
+}
+
+function findSong(library, artistName, albumName, songTitle) {
+  const artist = library.artists.find((item) => item.name === artistName);
+  const album = artist?.albums.find((item) => item.name === albumName);
+  return album?.songs.find((item) => item.title === songTitle);
 }
 
 function createEmptyState(message) {
@@ -477,27 +716,31 @@ function toggleSetValue(set, value) {
   }
 }
 
-function getSongKey(song) {
-  return `${song.artist}::${song.album}::${song.title}`.toLowerCase();
+function getSongKey(artist, album, title) {
+  return `${artist}::${album}::${title}`.toLowerCase();
 }
 
 function getAlbumKey(artist, album) {
   return `${artist}::${album}`.toLowerCase();
 }
 
-function saveSongs(songs) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(sortSongs(songs)));
+function getSongCount(library) {
+  return library.artists.reduce((artistTotal, artist) => {
+    return artistTotal + artist.albums.reduce((albumTotal, album) => albumTotal + album.songs.length, 0);
+  }, 0);
 }
 
-function loadSongs() {
+function cacheLibrary() {
+  localStorage.setItem(CACHE_KEY, JSON.stringify(sortLibrary(state.library)));
+}
+
+function loadCachedLibrary() {
   try {
-    const storedSongs = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-    return Array.isArray(storedSongs)
-      ? sortSongs(storedSongs.map(normalizeSong).filter(Boolean))
-      : [];
+    const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
+    return cached ? normalizeLibrary(cached) : null;
   } catch (error) {
-    console.error(error);
-    return [];
+    console.warn(error);
+    return null;
   }
 }
 
