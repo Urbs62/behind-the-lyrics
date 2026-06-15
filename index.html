@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Behind The Lyrics</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div class="brand-mark" aria-hidden="true">BTL</div>
+        <div>
+          <h1>Behind The Lyrics</h1>
+          <p>Discover the meaning behind the music.</p>
+        </div>
+      </header>
+
+      <section class="toolbar" aria-label="Import and search">
+        <label class="search-field">
+          <span>Sök</span>
+          <input id="searchInput" type="search" placeholder="Artist, album eller låt">
+        </label>
+
+        <div class="actions">
+          <label class="file-button">
+            Importera CSV/M3U
+            <input id="fileInput" type="file" accept=".csv,.m3u,.m3u8,text/csv,audio/x-mpegurl">
+          </label>
+          <button id="clearButton" class="ghost-button" type="button">Rensa data</button>
+        </div>
+      </section>
+
+      <section class="status-panel" aria-live="polite">
+        <p id="statusText">Importera en CSV-, M3U- eller M3U8-fil för att komma igång.</p>
+      </section>
+
+      <section id="library" class="library" aria-label="Imported music library"></section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
