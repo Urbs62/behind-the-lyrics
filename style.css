@@ -57,9 +57,9 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  margin-bottom: 16px;
-  padding: 26px 18px 22px;
+  gap: 18px;
+  margin-bottom: 18px;
+  padding: 30px 16px 24px;
   border: 1px solid rgba(154, 164, 178, 0.12);
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(27, 31, 38, 0.76), rgba(15, 18, 22, 0.82));
@@ -70,21 +70,20 @@ button {
 .brand-logo {
   display: block;
   flex: 0 0 auto;
-  width: auto;
-  height: 90px;
-  max-width: 100%;
-  border: 1px solid rgba(154, 164, 178, 0.24);
-  border-radius: 14px;
-  background: #0f1318;
+  width: min(88vw, 500px);
+  height: auto;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   object-fit: contain;
   object-position: center;
-  box-shadow:
-    0 18px 34px rgba(0, 0, 0, 0.34),
-    0 0 0 8px rgba(142, 164, 200, 0.04);
+  box-shadow: none;
 }
 
 .hero-copy {
   min-width: 0;
+  width: 100%;
 }
 
 .sr-only {
@@ -113,7 +112,7 @@ h1 {
 
 .hero p {
   color: #7d8794;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   line-height: 1.35;
   font-weight: 650;
 }
@@ -544,13 +543,9 @@ h1 {
   }
 
   .hero {
-    gap: 16px;
-    margin-bottom: 18px;
-    padding: 32px 28px 28px;
-  }
-
-  .brand-logo {
-    height: 120px;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 38px 28px 30px;
   }
 
   .actions {
