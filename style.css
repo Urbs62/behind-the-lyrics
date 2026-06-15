@@ -57,9 +57,9 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 14px;
   margin-bottom: 18px;
-  padding: 30px 16px 24px;
+  padding: 30px 16px 26px;
   border: 1px solid rgba(154, 164, 178, 0.12);
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(27, 31, 38, 0.76), rgba(15, 18, 22, 0.82));
@@ -67,23 +67,40 @@ button {
   text-align: center;
 }
 
+.brand-symbol {
+  display: grid;
+  width: 104px;
+  height: 104px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(154, 164, 178, 0.2);
+  border-radius: 24px;
+  background: #11151b;
+  box-shadow:
+    0 18px 34px rgba(0, 0, 0, 0.34),
+    0 0 0 8px rgba(142, 164, 200, 0.04);
+}
+
 .brand-logo {
   display: block;
   flex: 0 0 auto;
-  width: min(88vw, 500px);
+  width: 180%;
   height: auto;
   max-width: none;
   border: 0;
   border-radius: 0;
   background: transparent;
   object-fit: contain;
-  object-position: center;
   box-shadow: none;
+  transform: translateY(-16%);
 }
 
 .hero-copy {
+  display: grid;
+  gap: 8px;
   min-width: 0;
   width: 100%;
+  justify-items: center;
 }
 
 .sr-only {
@@ -104,10 +121,13 @@ p {
   margin: 0;
 }
 
-h1 {
-  font-size: clamp(1.42rem, 5vw, 2.25rem);
-  line-height: 1;
+.brand-title {
+  color: var(--text);
+  font-size: clamp(1.75rem, 7vw, 2.125rem);
+  line-height: 1.05;
+  font-weight: 850;
   letter-spacing: 0;
+  text-wrap: balance;
 }
 
 .hero p {
@@ -543,9 +563,19 @@ h1 {
   }
 
   .hero {
-    gap: 20px;
+    gap: 16px;
     margin-bottom: 20px;
-    padding: 38px 28px 30px;
+    padding: 40px 28px 32px;
+  }
+
+  .brand-symbol {
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
+  }
+
+  .brand-title {
+    font-size: clamp(2rem, 4vw, 2.625rem);
   }
 
   .actions {
