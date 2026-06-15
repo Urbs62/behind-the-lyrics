@@ -7,6 +7,7 @@ const state = {
   openArtists: new Set(),
   openAlbums: new Set(),
   visibleInterpretations: new Set(),
+  editingInterpretations: new Set(),
   loadedFrom: "memory",
   fileHandle: null,
   hasUnsavedChanges: false
@@ -145,6 +146,7 @@ async function clearLibrary() {
   state.openArtists.clear();
   state.openAlbums.clear();
   state.visibleInterpretations.clear();
+  state.editingInterpretations.clear();
   localStorage.removeItem(CACHE_KEY);
   state.hasUnsavedChanges = true;
   await persistLibraryChange();
@@ -496,7 +498,9 @@ function normalizeSong(song) {
     context: cleanText(song?.context),
     interpretation: cleanText(song?.interpretation),
     feeling: cleanText(song?.feeling),
-    tags: Array.isArray(song?.tags) ? song.tags.map(cleanText).filter(Boolean) : []
+    tags: Array.isArray(song?.tags) ? song.tags.map(cleanText).filter(Boolean) : [],
+    interpretationDepth: normalizeDepth(song?.interpretationDepth),
+    interpretationStatus: normalizeInterpretationStatus(song?.interpretationStatus, song)
   };
 }
 
@@ -519,7 +523,9 @@ function createSong(title) {
     context: "",
     interpretation: "",
     feeling: "",
-    tags: []
+    tags: [],
+    interpretationDepth: 0,
+    interpretationStatus: "not-generated"
   };
 }
 
@@ -556,11 +562,33 @@ function normalizeLibraryWithoutSorting(library) {
           context: cleanText(song.context),
           interpretation: cleanText(song.interpretation),
           feeling: cleanText(song.feeling),
-          tags: Array.isArray(song.tags) ? song.tags.map(cleanText).filter(Boolean) : []
+          tags: Array.isArray(song.tags) ? song.tags.map(cleanText).filter(Boolean) : [],
+          interpretationDepth: normalizeDepth(song.interpretationDepth),
+          interpretationStatus: normalizeInterpretationStatus(song.interpretationStatus, song)
         })).filter((song) => song.title)
       }))
     })).filter((artist) => artist.name)
   };
+}
+
+function normalizeDepth(value) {
+  const depth = Number(value);
+
+  if (!Number.isFinite(depth)) {
+    return 0;
+  }
+
+  return Math.min(5, Math.max(0, Math.round(depth)));
+}
+
+function normalizeInterpretationStatus(status, song) {
+  const cleanedStatus = cleanText(status);
+
+  if (["generated", "edited-manually", "not-generated"].includes(cleanedStatus)) {
+    return cleanedStatus;
+  }
+
+  return hasInterpretationData(song) ? "generated" : "not-generated";
 }
 
 function cleanText(value) {
@@ -695,60 +723,91 @@ function createAlbumCard(artistName, album) {
 
 function createSongRow(artistName, albumName, song) {
   const songKey = getSongKey(artistName, albumName, song.title);
+  const isVisible = state.visibleInterpretations.has(songKey);
+  const isEditing = state.editingInterpretations.has(songKey);
+  const interpretationStatus = getInterpretationStatus(song);
   const songRow = document.createElement("article");
   songRow.className = "song-row";
 
   const songMain = document.createElement("div");
   songMain.className = "song-main";
   songMain.innerHTML = `
-    <strong>${escapeHtml(song.title)}</strong>
-    <span>${escapeHtml(artistName)} / ${escapeHtml(albumName)}</span>
+    <span class="song-title-line">
+      <strong>${escapeHtml(song.title)}</strong>
+      ${renderStatusBadge(interpretationStatus)}
+    </span>
+    <span class="song-meta">${escapeHtml(artistName)} / ${escapeHtml(albumName)}</span>
   `;
 
-  const button = document.createElement("button");
-  button.className = "generate-button";
-  button.type = "button";
-  button.textContent = hasInterpretation(song)
-    ? "Show interpretation"
-    : "Generate interpretation";
+  const actions = document.createElement("div");
+  actions.className = "song-actions";
 
-  if (state.visibleInterpretations.has(songKey)) {
-    button.textContent = "Hide interpretation";
+  if (hasInterpretation(song)) {
+    const toggleButton = createActionButton(isVisible ? "Hide interpretation" : "Show interpretation");
+    toggleButton.addEventListener("click", () => {
+      toggleSetValue(state.visibleInterpretations, songKey);
+      if (!state.visibleInterpretations.has(songKey)) {
+        state.editingInterpretations.delete(songKey);
+      }
+      render();
+    });
+    actions.append(toggleButton);
+
+    const regenerateButton = createActionButton("Regenerate");
+    regenerateButton.addEventListener("click", async () => {
+      await writeGeneratedInterpretation(artistName, albumName, song.title);
+      state.visibleInterpretations.add(songKey);
+      state.editingInterpretations.delete(songKey);
+      render();
+      setStatus(`Regenerated interpretation for "${song.title}". ${getPersistenceHint()}`);
+    });
+    actions.append(regenerateButton);
+
+    const editButton = createActionButton(isEditing ? "Cancel edit" : "Edit");
+    editButton.addEventListener("click", () => {
+      state.visibleInterpretations.add(songKey);
+      toggleSetValue(state.editingInterpretations, songKey);
+      render();
+    });
+    actions.append(editButton);
+  } else {
+    const generateButton = createActionButton("Generate interpretation");
+    generateButton.addEventListener("click", async () => {
+      await writeGeneratedInterpretation(artistName, albumName, song.title);
+      state.visibleInterpretations.add(songKey);
+      render();
+      setStatus(`Generated interpretation for "${song.title}". ${getPersistenceHint()}`);
+    });
+    actions.append(generateButton);
   }
 
   const interpretation = document.createElement("section");
   interpretation.className = "interpretation";
-  interpretation.classList.toggle("is-visible", state.visibleInterpretations.has(songKey));
-  interpretation.innerHTML = renderInterpretation(song);
+  interpretation.classList.toggle("is-visible", isVisible);
 
-  button.addEventListener("click", async () => {
-    let generatedNewInterpretation = false;
+  if (isEditing) {
+    interpretation.append(createInterpretationEditor(artistName, albumName, song));
+  } else {
+    interpretation.innerHTML = renderInterpretation(song);
+  }
 
-    if (!hasInterpretation(song)) {
-      writeGeneratedInterpretation(artistName, albumName, song.title);
-      state.visibleInterpretations.add(songKey);
-      await persistLibraryChange();
-      generatedNewInterpretation = true;
-    } else {
-      toggleSetValue(state.visibleInterpretations, songKey);
-    }
-
-    render();
-
-    if (generatedNewInterpretation) {
-      setStatus(`Generated a placeholder interpretation in the JSON data structure. ${getPersistenceHint()}`);
-    }
-  });
-
-  songRow.append(songMain, button, interpretation);
+  songRow.append(songMain, actions, interpretation);
   return songRow;
 }
 
-function writeGeneratedInterpretation(artistName, albumName, songTitle) {
+function createActionButton(label) {
+  const button = document.createElement("button");
+  button.className = "generate-button";
+  button.type = "button";
+  button.textContent = label;
+  return button;
+}
+
+async function writeGeneratedInterpretation(artistName, albumName, songTitle) {
   const song = findSong(state.library, artistName, albumName, songTitle);
 
   if (!song) {
-    return;
+    return false;
   }
 
   const generated = generateInterpretation({
@@ -762,15 +821,78 @@ function writeGeneratedInterpretation(artistName, albumName, songTitle) {
   song.interpretation = generated.interpretation;
   song.feeling = generated.feeling;
   song.tags = generated.tags;
+  song.interpretationDepth = generated.interpretationDepth;
+  song.interpretationStatus = "generated";
+
+  await persistLibraryChange();
+  return true;
 }
 
 function generateInterpretation(song) {
+  const profile = getInterpretationProfile(song);
+  const artist = song.artist || "Unknown Artist";
+  const album = song.album || "Unknown Album";
+  const title = song.title || "Untitled";
+
   return {
-    summary: `A possible reading of the themes and context around "${song.title}" by ${song.artist}.`,
-    context: `This section will later contain background and context for the song from the album "${song.album}".`,
-    interpretation: "A short AI-generated interpretation will appear here without showing the lyrics.",
-    feeling: "Melancholic, reflective or energetic depending on the song.",
-    tags: ["Theme", "Mood", "Story"]
+    summary: profile.summary,
+    context: `${artist}'s "${title}" sits within the world of "${album}", so this reading treats the song as part of that album's broader mood rather than as a line-by-line lyric analysis.`,
+    interpretation: `A plausible interpretation is that "${title}" uses its title image as a doorway into ${profile.theme}. In the context of ${artist}'s catalog, it can be heard as a compact emotional scene: less about literal plot and more about the pressure between memory, desire, and the self a person is trying to become.`,
+    feeling: profile.feeling,
+    tags: profile.tags,
+    interpretationDepth: profile.depth
+  };
+}
+
+function getInterpretationProfile(song) {
+  const text = `${song.artist} ${song.album} ${song.title}`.toLowerCase();
+
+  if (/(river|road|highway|train|border|journey|street|avenue)/.test(text)) {
+    return {
+      summary: "Movement, longing, and the cost of change.",
+      theme: "transition, escape, and the uneasy promise of a different life",
+      feeling: "Restless, reflective, and quietly hopeful.",
+      tags: ["Journey", "Longing", "Change"],
+      depth: 5
+    };
+  }
+
+  if (/(love|heart|kiss|want|baby|girl|lady|sweet|tonight)/.test(text)) {
+    return {
+      summary: "Desire seen through memory and uncertainty.",
+      theme: "romance as both an invitation and a source of confusion",
+      feeling: "Tender, searching, and bittersweet.",
+      tags: ["Love", "Memory", "Vulnerability"],
+      depth: 4
+    };
+  }
+
+  if (/(war|heaven|death|grave|murder|blood|storm|desolation|dark)/.test(text)) {
+    return {
+      summary: "A meditation on danger, loss, and moral weather.",
+      theme: "mortality, fear, and the search for meaning when certainty falls away",
+      feeling: "Haunted, solemn, and intense.",
+      tags: ["Mortality", "Conflict", "Reflection"],
+      depth: 5
+    };
+  }
+
+  if (/(rock|roll|star|band|song|music|guitar|blues)/.test(text)) {
+    return {
+      summary: "A self-aware glance at performance and identity.",
+      theme: "the tension between artistic freedom, public image, and the machinery around music",
+      feeling: "Wry, energetic, and observant.",
+      tags: ["Music", "Identity", "Performance"],
+      depth: 4
+    };
+  }
+
+  return {
+    summary: "A compact portrait of inner conflict and perspective.",
+    theme: "identity, memory, and the private meanings people attach to experience",
+    feeling: "Reflective, intimate, and open-ended.",
+    tags: ["Reflection", "Identity", "Inner life"],
+    depth: 3
   };
 }
 
@@ -782,7 +904,8 @@ function renderInterpretation(song) {
       context: "",
       interpretation: "",
       feeling: "",
-      tags: []
+      tags: [],
+      interpretationDepth: 0
     };
 
   return `
@@ -802,6 +925,10 @@ function renderInterpretation(song) {
       <h4>Feeling</h4>
       <p>${escapeHtml(interpretation.feeling || "Pending generation.")}</p>
     </div>
+    <div class="interpretation-block">
+      <h4>Depth</h4>
+      <p>${escapeHtml(renderDepth(interpretation.interpretationDepth))}</p>
+    </div>
     <div class="tags">
       ${(interpretation.tags || []).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
     </div>
@@ -809,7 +936,113 @@ function renderInterpretation(song) {
 }
 
 function hasInterpretation(song) {
-  return Boolean(song.summary || song.context || song.interpretation || song.feeling || song.tags.length);
+  return hasInterpretationData(song);
+}
+
+function hasInterpretationData(song) {
+  return Boolean(song?.summary || song?.context || song?.interpretation || song?.feeling || song?.tags?.length || song?.interpretationDepth);
+}
+
+function getInterpretationStatus(song) {
+  if (song.interpretationStatus === "edited-manually") {
+    return "edited-manually";
+  }
+
+  if (hasInterpretation(song)) {
+    return "generated";
+  }
+
+  return "not-generated";
+}
+
+function renderStatusBadge(status) {
+  const labels = {
+    "not-generated": "Not generated",
+    generated: "Generated",
+    "edited-manually": "Edited manually"
+  };
+
+  return `<span class="status-badge status-badge--${status}">${labels[status]}</span>`;
+}
+
+function renderDepth(depth) {
+  const normalizedDepth = normalizeDepth(depth);
+  return normalizedDepth ? `${normalizedDepth}/5` : "Pending generation.";
+}
+
+function createInterpretationEditor(artistName, albumName, song) {
+  const songKey = getSongKey(artistName, albumName, song.title);
+  const form = document.createElement("form");
+  form.className = "interpretation-editor";
+  form.innerHTML = `
+    <label>
+      <span>Summary</span>
+      <input name="summary" value="${escapeAttribute(song.summary)}">
+    </label>
+    <label>
+      <span>Context</span>
+      <textarea name="context" rows="3">${escapeHtml(song.context)}</textarea>
+    </label>
+    <label>
+      <span>Possible interpretation</span>
+      <textarea name="interpretation" rows="4">${escapeHtml(song.interpretation)}</textarea>
+    </label>
+    <label>
+      <span>Feeling</span>
+      <input name="feeling" value="${escapeAttribute(song.feeling)}">
+    </label>
+    <label>
+      <span>Tags</span>
+      <input name="tags" value="${escapeAttribute((song.tags || []).join(", "))}">
+    </label>
+    <label>
+      <span>Depth 1-5</span>
+      <input name="interpretationDepth" type="number" min="1" max="5" value="${escapeAttribute(song.interpretationDepth || 3)}">
+    </label>
+    <div class="editor-actions">
+      <button class="secondary-button" type="submit">Save edits</button>
+      <button class="generate-button" type="button" data-cancel-edit>Cancel</button>
+    </div>
+  `;
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const editableSong = findSong(state.library, artistName, albumName, song.title);
+
+    if (!editableSong) {
+      return;
+    }
+
+    editableSong.summary = cleanText(formData.get("summary"));
+    editableSong.context = cleanText(formData.get("context"));
+    editableSong.interpretation = cleanText(formData.get("interpretation"));
+    editableSong.feeling = cleanText(formData.get("feeling"));
+    editableSong.tags = parseTags(formData.get("tags"));
+    editableSong.interpretationDepth = Math.max(1, normalizeDepth(formData.get("interpretationDepth")) || 1);
+    editableSong.interpretationStatus = "edited-manually";
+
+    state.editingInterpretations.delete(songKey);
+    state.visibleInterpretations.add(songKey);
+    await persistLibraryChange();
+    render();
+    setStatus(`Saved manual edits for "${song.title}". ${getPersistenceHint()}`);
+  });
+
+  form.querySelector("[data-cancel-edit]").addEventListener("click", () => {
+    state.editingInterpretations.delete(songKey);
+    render();
+  });
+
+  return form;
+}
+
+function parseTags(value) {
+  return String(value || "")
+    .split(",")
+    .map(cleanText)
+    .filter(Boolean)
+    .slice(0, 8);
 }
 
 function findSong(library, artistName, albumName, songTitle) {
@@ -884,4 +1117,8 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function escapeAttribute(value) {
+  return escapeHtml(value);
 }

@@ -37,7 +37,8 @@ body {
 }
 
 button,
-input {
+input,
+textarea {
   font: inherit;
 }
 
@@ -305,15 +306,58 @@ h1 {
   gap: 5px;
 }
 
+.song-title-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+
 .song-main strong {
   color: var(--text);
   font-size: 0.98rem;
   font-weight: 780;
 }
 
-.song-main span {
+.song-meta {
   color: var(--muted);
   font-size: 0.8rem;
+}
+
+.status-badge {
+  display: inline-grid;
+  min-height: 24px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 8px;
+  color: var(--muted-strong);
+  background: #10141a;
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+.status-badge--not-generated {
+  color: #aeb7c4;
+  background: rgba(154, 164, 178, 0.08);
+}
+
+.status-badge--generated {
+  border-color: rgba(142, 164, 200, 0.42);
+  color: #d5e0f1;
+  background: var(--accent-soft);
+}
+
+.status-badge--edited-manually {
+  border-color: rgba(199, 181, 118, 0.46);
+  color: #eadca7;
+  background: rgba(199, 181, 118, 0.12);
+}
+
+.song-actions {
+  display: grid;
+  gap: 8px;
 }
 
 .generate-button {
@@ -382,6 +426,48 @@ h1 {
   font-weight: 800;
 }
 
+.interpretation-editor {
+  display: grid;
+  gap: 11px;
+}
+
+.interpretation-editor label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted-strong);
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.interpretation-editor input,
+.interpretation-editor textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 10px 11px;
+  background: #0f1216;
+  color: var(--text);
+  outline: none;
+  line-height: 1.4;
+  text-transform: none;
+}
+
+.interpretation-editor textarea {
+  resize: vertical;
+}
+
+.interpretation-editor input:focus,
+.interpretation-editor textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.editor-actions {
+  display: grid;
+  gap: 8px;
+}
+
 .empty-state {
   border: 1px dashed var(--line);
   border-radius: var(--radius-lg);
@@ -416,6 +502,10 @@ h1 {
   .song-row {
     grid-template-columns: minmax(0, 1fr) 210px;
     align-items: start;
+  }
+
+  .editor-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .interpretation {
