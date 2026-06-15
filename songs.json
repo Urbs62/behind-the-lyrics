@@ -1,6 +1,3370 @@
 {
   "artists": [
     {
+      "name": "Bob Dylan",
+      "albums": [
+        {
+          "name": "Across the Borderline (with Tom Petty)",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Justine",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Knockin' On Heaven's Door",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "So You Want to Be a Rock 'N' Roll Star",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Blonde on Blonde",
+          "cover": "",
+          "songs": [
+            {
+              "title": "4th Time Around",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "I Want You",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Most Likely You Go Your Way (And I'll Go Mine)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Sad Eyed Lady of the Lowlands",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Visions of Johanna",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Blood on the tracks",
+          "cover": "",
+          "songs": [
+            {
+              "title": "07 - Lily, Rosemary And The Jack Of Hearts",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "09 - Shelter From The Storm",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Bob Dylan",
+          "cover": "",
+          "songs": [
+            {
+              "title": "House Of The Risin' Sun",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "See That My Grave Is Kept Clean",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Bringing It All Back Home",
+          "cover": "",
+          "songs": [
+            {
+              "title": "It's All Over Now, Baby Blue",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Mr. Tambourine Man",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Completely Unplugged",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Tombstone Blues",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Desire",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Hurricane",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "One More Cup Of Coffee",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Dylan",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Lily Of The West",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Mr.Bojangles",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Ballad Of Ira Hayes",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Dylan Revisited - All Time Best",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Blowin' In The Wind",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "I Shall Be Released",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Jokerman",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Knockin' On Heaven's Door",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Like A Rolling Stone",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Not Dark Yet",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Series of Dreams",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Song To Woody",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Tangled Up In Blue",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Empire Burlesque",
+          "cover": "",
+          "songs": [
+            {
+              "title": "When The Night Comes Falling From The Sky",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Essentials",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Things Have Changed (Single Version)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Fallen Angels",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Come Rain or Come Shine",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Fragments - Time Out of Mind Sessions",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Love Sick (2022 Remix)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Love Sick (Live in Birmingham,",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Not Dark Yet (2022 Remix)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Not Dark Yet (Live in Sheffield",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Not Dark Yet (Version 1)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Not Dark Yet (Version 2)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Standing in the Doorway (2022 R",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Tryin' to Get to Heaven (Live i",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Good as I been to you",
+          "cover": "",
+          "songs": [
+            {
+              "title": "03 - Blackjack Davey",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "12 - Diamond Joe",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "13 - Froggie Went A Courtin'",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Highway 61 Revisited",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Desolation Row",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Infidels",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Jokerman",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Union Sundown",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "John Wesley Harding",
+          "cover": "",
+          "songs": [
+            {
+              "title": "All Along The Watchtower",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "I'll Be Your Baby Tonight",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Ballad Of Frankie Lee And Judas Priest",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Love and Theft",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Bye and Bye",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Modern Times",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Ain't Talkin'",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Nettie Moore",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Rollin' And Tumblin'",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Someday Baby",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Spirit On The Water",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Levee's Gonna Break",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Thunder On The Mountain",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Workingman's Blues #2",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Nashville Skyline",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Girl From The North Country",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Lay Lady Lay",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "New Morning",
+          "cover": "",
+          "songs": [
+            {
+              "title": "12 - Father of Night",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Oh Mercy",
+          "cover": "",
+          "songs": [
+            {
+              "title": "01 - Political World",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "04 - Ring Them Bells",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "07 - What Good am I",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "09 - What was it you wanted",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Pat Garret & Billy The Kid",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Knockin'On Heaven's Door",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Main Title Theme (Billy)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Turkay Chase",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Planet Waves",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Planet Waves - 01 - On A Night Like This",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Planet Waves - 11 - Wedding Song",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Rough and Rowdy Ways",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Key West (Philosopher Pirate)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Saved",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Saved",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Self Portrait",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Early Mornin' Rain",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Mighty Quinn (Quinn, The Eskimo)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Shadow Kingdom",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Just Like Tom Thumb's Blues",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Most Likely You Go Your Way (And I'll Go Mine)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Queen Jane Approximately",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Sierra's Theme",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "What Was It You Wanted",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Shadows in the Night",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Autumn Leaves",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Shot of Love",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Shot of Love",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Slow Train Coming",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Gotta Serve Somebody",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Man Gave Names To All The Animals",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Precious Angel",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Street Legal",
+          "cover": "",
+          "songs": [
+            {
+              "title": "SeÃ±or (Tales of yankee power)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Where are you tonight_ (Journey through dark heat)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Tempest",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Long and Wasted Years",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Narrow Way",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Roll On John",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Tempest",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Tin Angel",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "The Basement Tapes",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Lo and Behold!",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Odds and Ends",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "You Ain't Goin' Nowhere",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "The Bootleg Series Vol.1-3 - Rare & Unreleased 1961-1991",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Series of Dreams",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Someone's Got a Hold of My Heart",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "The Bootleg Series Vol.8 - Tell Tale Signs Rare and Unreleased 1989-2006",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Ain't Talkin'",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Born in Time",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Can't Escape from You",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Cross the Green Mountain",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "God Knows",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Huck's Tune",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Most Of The Time",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Red River Shore",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Series of Dreams",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Someday Baby",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Tel Ol' Bill",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Things Have Changed",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "The Freewheelin Bob Dylan",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Don't Think Twice, It's All Right",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Masters Of War",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "The Times They Are A-Changin'",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Ballad Of Hollis Brown",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Boots Of Spanish Leather",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "North Country Blues",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Times They Are A-Changin'",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "When The Ship Comes In",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Time out of Mind",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Love Sick",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Make You Feel My Love",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Not Dark Yet",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Standing In The Doorway",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Tryin' To Get To Heaven",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Together Through Life",
+          "cover": "",
+          "songs": [
+            {
+              "title": "bob_dylan-its_all_good",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Under the Red Sky",
+          "cover": "",
+          "songs": [
+            {
+              "title": "2x2",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Born In Time",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Under The Red Sky",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "World Gone Wrong",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Jack-A-Roe",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "World Gone Wrong",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Neil Young",
+      "albums": [
+        {
+          "name": "A Letter Home",
+          "cover": "",
+          "songs": [
+            {
+              "title": "A Letter Home Intro",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Changes",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "I Wonder If I Care As Much",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "A Treasure",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Grey Riders",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Southern Pacific",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Acoustic Afternoon",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Comes a Time",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Everybody Knows This i",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Heart of Gold",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Needle & The Damage Done",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "After the Gold Rush",
+          "cover": "",
+          "songs": [
+            {
+              "title": "After The Gold Rush",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Birds",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Americana",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Wayfarin' Stranger",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Archives Be Damned",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Dead Man Acoustic Theme",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Nothing Is Perfect",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Sixty to Zero",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Are You Passionate",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Are You Passionate_",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Differently",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Goin' Home",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Mr. Disappointment",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Quit (Don't Say You Love Me)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "When I Hold You In My Arms",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Barn",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Song Of The Seasons",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "They Might Be Lost",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Welcome Back",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Before and After",
+          "cover": "",
+          "songs": [
+            {
+              "title": "A Dream That Can Last",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Comes a Time",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "I'm The Ocean",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "My Heart",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "When I Hold You In My Arms",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Bluenote Cafe",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Bad News Comes to Town",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Crime In The City",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Life In The City",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Ordinary People",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Borrowed Tunes - A Tribute to Neil Young",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Borrowed Tunes II- A Tribute to Neil Young (Disc 1) (2007) - 15 - Ron Sexsmith - Philadelphia",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Broken Arrow",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Big Time",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Music Arcade",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Slip Away",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Chrome Dreams",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Neil_Young-Chrome_Dreams-Homegrown-ATM",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Neil_Young-Chrome_Dreams-Pocahontas-ATM",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Neil_Young-Chrome_Dreams-Powderfinger-ATM",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Neil_Young-Chrome_Dreams-Sedan_delivery-ATM",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Chrome Dreams II",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Beautiful Bluebird",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Boxcar",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "No Hidden Path",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Ordinary People",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Way",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Comes A Time",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Comes A Time",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Four Strong Winds",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Peace Of Mind",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Decade",
+          "cover": "",
+          "songs": [
+            {
+              "title": "I Am A Child",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Ohio",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Soldier",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Sugar Mountain",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Déjà Vu [Live]",
+          "cover": "",
+          "songs": [
+            {
+              "title": "After The Garden [Live]",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Let's Impeach The President [Live]",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Living With War -Theme [Reprise]",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Living With War [Live]",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Looking For A Leader [Live]",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Roger And Out [Live]",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Shock And Awe [Live]",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Theme",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Dreamin' Man Live '92",
+          "cover": "",
+          "songs": [
+            {
+              "title": "From Hank To Hendrix",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Natural Beauty",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "One Of These Days",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Unknown Legend",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Earth",
+          "cover": "",
+          "songs": [
+            {
+              "title": "(01) [Neil Young + Promise Of The Real] Mother Earth",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "(03) [Neil Young + Promise Of The Real] Wolf Moon",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "(08) [Neil Young + Promise Of The Real] After The Gold Rush",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Everybody Knows This Is Nowhere",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Cinnamon Girl",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Cowgirl In The Sand",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Everybody's Rockin'",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Everybody's Rockin'",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Fork in the Road",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Fork in the Road",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Light a Candle",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Freedom",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Crime In The City (Sixty To Zero, Pt. 1)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Greendale",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Be the Rain",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Bringin' Down Dinner",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Falling from Above",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Grandpa's Interview",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Sun Green",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Harvest",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Harvest",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Heart Of Gold",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Needle And The Damage Done",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Harvest Moon",
+          "cover": "",
+          "songs": [
+            {
+              "title": "From Hank To Hendrix",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Natural Beauty",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "One Of These Days",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Such A Woman",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Hawks And Doves",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Little Wing",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Old Homestead",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Hitchhiker",
+          "cover": "",
+          "songs": [
+            {
+              "title": "neil_young-hawaii",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Journey Through The Past (Soundtrack)",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Find the Coast of Freedom",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Ohio",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Southern Man",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Words",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Landing on Water",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Bad News Beat",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Drifter",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Weight of the World",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Le Noise",
+          "cover": "",
+          "songs": [
+            {
+              "title": "neil_young-hitchhiker",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "neil_young-love_and_war",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "neil_young-peaceful_vally_boulevard",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Life",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Inca Queen",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Long Walk Home",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Mideast Vacation",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "We Never Danced",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "When Your Lonely Heart Breaks",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Live in Amsterdam",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Crime in the City",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Live Rust",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Cortez the Killer",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Hey Hey, My My",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "I Am a Child",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "My My, Hey Hey",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Living With War",
+          "cover": "",
+          "songs": [
+            {
+              "title": "neil_young-america_the_beautiful",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "neil_young-lets_impeach_the_president",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "neil_young-living_with_war",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "neil_young-lookin_for_a_leader",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "neil_young-roger_and_out",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "neil_young-shock_and_awe",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Long May You Run",
+          "cover": "",
+          "songs": [
+            {
+              "title": "12_8 Blues (All The Same)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Midnight On The Bay",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Looking Forward",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Sanibel",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Someday Soon",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Lucky Thirteen",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Mideast Vacation",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Once An Angel",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Mirror Ball",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Big Green Country",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Fallen Angel",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "I'm The Ocean",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Throw Your Hatred Down",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "What Happened Yesterday",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Mystery Train",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Bound For Glory",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "California Sunset",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Like An Inka",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "My Boy",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Neil Young",
+          "cover": "",
+          "songs": [
+            {
+              "title": "The Old Laughing Lady",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Neil Young Archives Vol. II (1972 - 1976)",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Bad Fog of Loneliness",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Cortez the Killer (Live from Hammersmith Odeon, London)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Letter from Nam",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Neil Young Archives Vol. III Takes",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Barstool Blues (previously unreleased live version)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Comes A Time (previously unreleased version)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Hey Babe (previously unreleased version)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Hey Hey, My My, (Into The Black)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Hitchhiker",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Last Of His Kind (previously unreleased original)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Razor Love",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Trasher (previously unreleased live version)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Old Ways",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Bound For Glory",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Misfits",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "On The Beach",
+          "cover": "",
+          "songs": [
+            {
+              "title": "See the sky about to rain",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Paradox",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Happy Together",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Peace Trail",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Pocahontas",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Tumbleweed",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Peace Trail",
+          "cover": "",
+          "songs": [
+            {
+              "title": "My Pledge",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Peace Trail",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Terrorist Suicide Hang Gliders",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Prairie Wind",
+          "cover": "",
+          "songs": [
+            {
+              "title": "It's a Dream",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "When God Made Me",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Psychedelic Pill",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Driftin' Back",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Ramada Inn",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Ragged Glory",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Mother Earth (Natural Anthem)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "White Line",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Re-ac-tor",
+          "cover": "",
+          "songs": [
+            {
+              "title": "03 - T-bone",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "05 - Southern Pacific",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "08 - Shots",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Rust Never Sleeps",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Hey Hey, My My (Into the Black)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "My My, Hey Hey (Out of the Blue)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Sedan Delivery",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Silver & Gold",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Good to See You",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Razor Love",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Red Sun",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Great Divide",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Sleeps with Angels",
+          "cover": "",
+          "songs": [
+            {
+              "title": "A Dream That Can Last",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Driveby",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "My Heart",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Train of Love",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Trans Am",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Western Hero",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Storytone",
+          "cover": "",
+          "songs": [
+            {
+              "title": "I'm Glad I Found You (Solo)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Tumbleweed (Solo)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "When I Watch You Sleeping (Orchestral)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "When I Watch You Sleeping (Solo)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Talkin to the Trees",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Family Life",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "First Fire of Winter",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Lets Roll Again",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Talkin to the Trees",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Thankful",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "The Monsanto Years",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Wolf Moon",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "The Times",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Lookin' For A Leader 2020",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "The Visitor",
+          "cover": "",
+          "songs": [
+            {
+              "title": "neil_young__promise_of_the_real-almost_always-1ab184e1",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "neil_young__promise_of_the_real-change_of_heart-325049a9",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "This Note's For You",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Coupe De Ville",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Life In The City",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "One Thing",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Toast",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Goin' Home",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "How Ya Doin' -",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Quit",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Tonight's the Night",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Tonight's The Night",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Tonight's The Night, Pt. 2",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Touch The Sky",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Everybody Knows This Is Nowhere",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Wondering",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Trans",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Computer Age",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Computer Cowboy (Aka Sycrusher)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Hold On To Your Love",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Like An Inca",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Twisted Road Tour",
+          "cover": "",
+          "songs": [
+            {
+              "title": "LOVE AND WAR",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "YOU NEVER CALL",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Unplugged",
+          "cover": "",
+          "songs": [
+            {
+              "title": "From Hank To Hendrix",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Like A Hurricane",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Weld",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Hey hey my my",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Young Shakespeare",
+          "cover": "",
+          "songs": [
+            {
+              "title": "A Man Needs a Maid,Heart of Gold (Medley)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Sugar Mountain",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Zuma",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Cortez The Killer",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Pardon My Heart",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Supertramp",
       "albums": [
         {
@@ -988,6 +4352,25 @@
             },
             {
               "title": "Wild Wild Life",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Various Artists",
+      "albums": [
+        {
+          "name": "Philadelphia",
+          "cover": "",
+          "songs": [
+            {
+              "title": "09 - Neil Yong - Philadelphia",
               "summary": "",
               "context": "",
               "interpretation": "",
