@@ -3704,11 +3704,15 @@
           "songs": [
             {
               "title": "Babaji",
-              "summary": "",
-              "context": "",
-              "interpretation": "",
-              "feeling": "",
-              "tags": []
+              "summary": "A possible reading of the themes and context around \"Babaji\" by Supertramp.",
+              "context": "This section will later contain background and context for the song from the album \"Even In The Quietest Moments\".",
+              "interpretation": "A short AI-generated interpretation will appear here without showing the lyrics.",
+              "feeling": "Melancholic, reflective or energetic depending on the song.",
+              "tags": [
+                "Theme",
+                "Mood",
+                "Story"
+              ]
             },
             {
               "title": "Downstream",
