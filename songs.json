@@ -1,3 +1,341 @@
 {
-  "artists": []
+  "artists": [
+    {
+      "name": "Supertramp",
+      "albums": [
+        {
+          "name": "Breakfast In America",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Casual Conversations",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Child Of Vision",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Gone Hollywood",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Goodbye Stranger",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Logical Song",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Brother Where You Bound",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Cannonball",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Classics, Vol. 9",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Hide in Your Shell (Classic)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "The Logical Song (Classic)",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Crime Of The Century",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Asylum",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Crime Of The Century",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Dreamer",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Hide In Your Shell",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Rudy",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "School",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Crisis What Crisis",
+          "cover": "",
+          "songs": [
+            {
+              "title": "A Soapbox Opera",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Just A Normal Day",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Poor Boy",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Two Of Us",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Even In The Quietest Moments",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Babaji",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Downstream",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Even in the Quietest Moments",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Fool's Overture",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "From Now On",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Lover Boy",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Famous Last Words",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Crazy",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Don't Leave Me Now",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "It's Raining Again",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Know Who You Are",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Indelibly Stamped",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Aries",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Coming Home To See You",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Live in Paris",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Crime Of The Century",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "You Started Laughing",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        },
+        {
+          "name": "Surely",
+          "cover": "",
+          "songs": [
+            {
+              "title": "Maybe I'm Beggar",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            },
+            {
+              "title": "Surely",
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
