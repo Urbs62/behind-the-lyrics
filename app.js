@@ -1,5 +1,5 @@
 const DATA_URL = "songs.json";
-const CACHE_KEY = "behindTheLyrics.libraryCache.v2";
+const CACHE_KEY = "behindTheLyrics.libraryCache.v3";
 const OPENAI_API_KEY = "";
 const OPENAI_MODEL = "gpt-4o-mini";
 const OPENAI_CHAT_COMPLETIONS_URL = "https://api.openai.com/v1/chat/completions";
@@ -822,7 +822,7 @@ async function handleGenerateInterpretation(artistName, albumName, songTitle) {
     state.editingInterpretations.delete(songKey);
     setStatus(`Generated interpretation for "${songTitle}". ${getPersistenceHint()}`);
   } catch (error) {
-    console.error(error);
+    console.error(`OpenAI API error: ${error.message || error}`);
     setStatus(error.message || "Could not generate interpretation.");
   } finally {
     state.generatingInterpretations.delete(songKey);
@@ -837,6 +837,7 @@ async function writeGeneratedInterpretation(artistName, albumName, songTitle) {
     return false;
   }
 
+  console.log(`Generating REAL interpretation for: ${artistName} / ${albumName} / ${songTitle}`);
   const generated = await generateRealInterpretation({
     artist: artistName,
     album: albumName,
@@ -859,7 +860,9 @@ async function writeGeneratedInterpretation(artistName, albumName, songTitle) {
 
 async function generateRealInterpretation(song) {
   if (!OPENAI_API_KEY.trim()) {
-    throw new Error("OpenAI API key is missing.");
+    const message = "OpenAI API key is missing. Real interpretation was not generated.";
+    console.error(`OpenAI API error: ${message}`);
+    throw new Error(message);
   }
 
   const response = await fetch(OPENAI_CHAT_COMPLETIONS_URL, {
@@ -895,17 +898,27 @@ async function generateRealInterpretation(song) {
       details = "";
     }
 
-    throw new Error(`OpenAI API request failed (${response.status}).${details}`);
+    const message = `OpenAI API request failed (${response.status}).${details}`;
+    console.error(`OpenAI API error: ${message}`);
+    throw new Error(message);
   }
 
   const data = await response.json();
+  console.log("OpenAI API response received");
   const content = data?.choices?.[0]?.message?.content;
 
   if (!content) {
-    throw new Error("OpenAI API returned an empty response.");
+    const message = "OpenAI API returned an empty response.";
+    console.error(`OpenAI API error: ${message}`);
+    throw new Error(message);
   }
 
-  return normalizeGeneratedInterpretation(parseInterpretationJson(content));
+  try {
+    return normalizeGeneratedInterpretation(parseInterpretationJson(content));
+  } catch (error) {
+    console.error(`OpenAI API error: ${error.message}`);
+    throw error;
+  }
 }
 
 function createInterpretationPrompt(song) {
@@ -1044,7 +1057,7 @@ function generateMockInterpretation(song) {
   return {
     summary: profile.summary,
     context: `${artist}'s "${title}" sits within the world of "${album}", so this reading treats the song as part of that album's broader mood rather than as a line-by-line lyric analysis.`,
-    interpretation: `A plausible interpretation is that "${title}" uses its title image as a doorway into ${profile.theme}. In the context of ${artist}'s catalog, it can be heard as a compact emotional scene: less about literal plot and more about the pressure between memory, desire, and the self a person is trying to become.`,
+    interpretation: `A mock-only draft for "${title}" would frame the song around ${profile.theme}. In the context of ${artist}'s catalog, it should be treated as placeholder text until real OpenAI generation is configured.`,
     feeling: profile.feeling,
     tags: profile.tags,
     interpretationDepth: profile.depth

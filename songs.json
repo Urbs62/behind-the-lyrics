@@ -573,17 +573,13 @@
           "songs": [
             {
               "title": "Justine",
-              "summary": "Movement, longing, and the cost of change.",
-              "context": "Bob Dylan's \"Justine\" sits within the world of \"Across the Borderline (with Tom Petty)\", so this reading treats the song as part of that album's broader mood rather than as a line-by-line lyric analysis.",
-              "interpretation": "A plausible interpretation is that \"Justine\" uses its title image as a doorway into transition, escape, and the uneasy promise of a different life. In the context of Bob Dylan's catalog, it can be heard as a compact emotional scene: less about literal plot and more about the pressure between memory, desire, and the self a person is trying to become.",
-              "feeling": "Restless, reflective, and quietly hopeful.",
-              "tags": [
-                "Journey",
-                "Longing",
-                "Change"
-              ],
-              "interpretationDepth": 5,
-              "interpretationStatus": "generated"
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
             },
             {
               "title": "Knockin' On Heaven's Door",
@@ -5255,17 +5251,13 @@
             },
             {
               "title": "Even in the Quietest Moments",
-              "summary": "A compact portrait of inner conflict and perspective.",
-              "context": "Supertramp's \"Even in the Quietest Moments\" sits within the world of \"Even In The Quietest Moments\", so this reading treats the song as part of that album's broader mood rather than as a line-by-line lyric analysis.",
-              "interpretation": "A plausible interpretation is that \"Even in the Quietest Moments\" uses its title image as a doorway into identity, memory, and the private meanings people attach to experience. In the context of Supertramp's catalog, it can be heard as a compact emotional scene: less about literal plot and more about the pressure between memory, desire, and the self a person is trying to become.",
-              "feeling": "Reflective, intimate, and open-ended.",
-              "tags": [
-                "Reflection",
-                "Identity",
-                "Inner life"
-              ],
-              "interpretationDepth": 3,
-              "interpretationStatus": "generated"
+              "summary": "",
+              "context": "",
+              "interpretation": "",
+              "feeling": "",
+              "tags": [],
+              "interpretationDepth": 0,
+              "interpretationStatus": "not-generated"
             },
             {
               "title": "Fool's Overture",
