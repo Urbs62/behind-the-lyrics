@@ -1,6 +1,5 @@
 const DATA_URL = "songs.json";
 const CACHE_KEY = "behindTheLyrics.libraryCache.v3";
-const OPENAI_API_KEY = "";
 const OPENAI_MODEL = "gpt-4o-mini";
 const OPENAI_CHAT_COMPLETIONS_URL = "https://api.openai.com/v1/chat/completions";
 
@@ -901,7 +900,9 @@ async function writeGeneratedInterpretation(artistName, albumName, songTitle) {
 }
 
 async function generateRealInterpretation(song) {
-  if (!OPENAI_API_KEY.trim()) {
+  const apiKey = getOpenAiApiKey();
+
+  if (!apiKey) {
     const message = "OpenAI API key is missing. Real interpretation was not generated.";
     console.error(`OpenAI API error: ${message}`);
     throw new Error(message);
@@ -912,7 +913,7 @@ async function generateRealInterpretation(song) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${OPENAI_API_KEY}`
+      Authorization: `Bearer ${apiKey}`
     },
     body: JSON.stringify({
       model: OPENAI_MODEL,
@@ -962,6 +963,10 @@ async function generateRealInterpretation(song) {
     console.error(`OpenAI API error: ${error.message}`);
     throw error;
   }
+}
+
+function getOpenAiApiKey() {
+  return String(window.BTL_CONFIG?.OPENAI_API_KEY || "").trim();
 }
 
 function createInterpretationPrompt(song) {
