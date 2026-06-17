@@ -36,6 +36,7 @@ async function init() {
   saveJsonButton.addEventListener("click", saveLibraryToMasterFile);
   exportButton.addEventListener("click", exportLibrary);
   clearButton.addEventListener("click", clearLibrary);
+  libraryElement.addEventListener("click", handleLibraryClick);
 
   await loadInitialLibrary();
   render();
@@ -144,6 +145,26 @@ async function handleFileImport(event) {
 function handleSearch(event) {
   state.search = event.target.value.trim().toLowerCase();
   render();
+}
+
+async function handleLibraryClick(event) {
+  const generateButton = event.target.closest("[data-generate-real]");
+
+  if (!generateButton || !libraryElement.contains(generateButton)) {
+    return;
+  }
+
+  event.preventDefault();
+
+  if (generateButton.disabled) {
+    return;
+  }
+
+  await handleGenerateInterpretation(
+    generateButton.dataset.artistName,
+    generateButton.dataset.albumName,
+    generateButton.dataset.songTitle
+  );
 }
 
 async function clearLibrary() {
@@ -766,10 +787,8 @@ function createSongRow(artistName, albumName, song) {
     actions.append(toggleButton);
 
     const regenerateButton = createActionButton(isGenerating ? "Generating..." : "Generate Real Interpretation");
+    setGenerateButtonData(regenerateButton, artistName, albumName, song.title);
     regenerateButton.disabled = isGenerating;
-    regenerateButton.addEventListener("click", async () => {
-      await handleGenerateInterpretation(artistName, albumName, song.title, song);
-    });
     actions.append(regenerateButton);
 
     const editButton = createActionButton(isEditing ? "Cancel edit" : "Edit");
@@ -781,10 +800,8 @@ function createSongRow(artistName, albumName, song) {
     actions.append(editButton);
   } else {
     const generateButton = createActionButton(isGenerating ? "Generating..." : "Generate Real Interpretation");
+    setGenerateButtonData(generateButton, artistName, albumName, song.title);
     generateButton.disabled = isGenerating;
-    generateButton.addEventListener("click", async () => {
-      await handleGenerateInterpretation(artistName, albumName, song.title, song);
-    });
     actions.append(generateButton);
   }
 
@@ -808,6 +825,13 @@ function createActionButton(label) {
   button.type = "button";
   button.textContent = label;
   return button;
+}
+
+function setGenerateButtonData(button, artistName, albumName, songTitle) {
+  button.dataset.generateReal = "true";
+  button.dataset.artistName = artistName;
+  button.dataset.albumName = albumName;
+  button.dataset.songTitle = songTitle;
 }
 
 async function handleGenerateInterpretation(artistName, albumName, songTitle, clickedSong) {
