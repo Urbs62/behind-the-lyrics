@@ -12,6 +12,7 @@ const state = {
   visibleInterpretations: new Set(),
   editingInterpretations: new Set(),
   generatingInterpretations: new Set(),
+  operationStatus: "",
   loadedFrom: "memory",
   fileHandle: null,
   hasUnsavedChanges: false
@@ -658,7 +659,7 @@ function render() {
 
   if (!visibleSongs) {
     libraryElement.append(createEmptyState("No matches for this search."));
-    setStatus(`Showing 0 of ${totalSongs} songs.`);
+    setStatus(state.operationStatus || `Showing 0 of ${totalSongs} songs.`);
     return;
   }
 
@@ -666,7 +667,7 @@ function render() {
     libraryElement.append(createArtistCard(artist));
   });
 
-  setStatus(`Showing ${visibleSongs} of ${totalSongs} songs. Source: ${state.loadedFrom}.${state.hasUnsavedChanges ? " Unsaved changes." : ""}`);
+  setStatus(state.operationStatus || `Showing ${visibleSongs} of ${totalSongs} songs. Source: ${state.loadedFrom}.${state.hasUnsavedChanges ? " Unsaved changes." : ""}`);
 }
 
 function createArtistCard(artist) {
@@ -767,7 +768,7 @@ function createSongRow(artistName, albumName, song) {
     const regenerateButton = createActionButton(isGenerating ? "Generating..." : "Generate Real Interpretation");
     regenerateButton.disabled = isGenerating;
     regenerateButton.addEventListener("click", async () => {
-      await handleGenerateInterpretation(artistName, albumName, song.title);
+      await handleGenerateInterpretation(artistName, albumName, song.title, song);
     });
     actions.append(regenerateButton);
 
@@ -782,7 +783,7 @@ function createSongRow(artistName, albumName, song) {
     const generateButton = createActionButton(isGenerating ? "Generating..." : "Generate Real Interpretation");
     generateButton.disabled = isGenerating;
     generateButton.addEventListener("click", async () => {
-      await handleGenerateInterpretation(artistName, albumName, song.title);
+      await handleGenerateInterpretation(artistName, albumName, song.title, song);
     });
     actions.append(generateButton);
   }
@@ -809,21 +810,38 @@ function createActionButton(label) {
   return button;
 }
 
-async function handleGenerateInterpretation(artistName, albumName, songTitle) {
+async function handleGenerateInterpretation(artistName, albumName, songTitle, clickedSong) {
   const songKey = getSongKey(artistName, albumName, songTitle);
+  const song = findSong(state.library, artistName, albumName, songTitle);
+
+  console.log("Generate Real Interpretation clicked", song || clickedSong);
+  setOperationStatus("Starting real interpretation generation...");
+
+  if (typeof generateRealInterpretation !== "function") {
+    const message = "generateRealInterpretation is not defined. Real interpretation was not generated.";
+    console.error(message);
+    setOperationStatus(message);
+    return;
+  }
+
+  if (!song) {
+    const message = "Song could not be found. Real interpretation was not generated.";
+    console.error(message);
+    setOperationStatus(message);
+    return;
+  }
 
   state.generatingInterpretations.add(songKey);
-  setStatus(`Generating interpretation for "${songTitle}"...`);
   render();
 
   try {
     await writeGeneratedInterpretation(artistName, albumName, songTitle);
     state.visibleInterpretations.add(songKey);
     state.editingInterpretations.delete(songKey);
-    setStatus(`Generated interpretation for "${songTitle}". ${getPersistenceHint()}`);
+    setOperationStatus("Interpretation generated. Remember to Save songs.json.");
   } catch (error) {
     console.error(`OpenAI API error: ${error.message || error}`);
-    setStatus(error.message || "Could not generate interpretation.");
+    setOperationStatus(error.message || "Could not generate interpretation.");
   } finally {
     state.generatingInterpretations.delete(songKey);
     render();
@@ -865,6 +883,7 @@ async function generateRealInterpretation(song) {
     throw new Error(message);
   }
 
+  setOperationStatus("Calling OpenAI API...");
   const response = await fetch(OPENAI_CHAT_COMPLETIONS_URL, {
     method: "POST",
     headers: {
@@ -1328,6 +1347,11 @@ function getPersistenceHint() {
 
 function setStatus(message) {
   statusText.textContent = message;
+}
+
+function setOperationStatus(message) {
+  state.operationStatus = message;
+  setStatus(message);
 }
 
 function escapeHtml(value) {
