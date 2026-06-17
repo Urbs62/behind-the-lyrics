@@ -448,6 +448,12 @@ p {
   filter: brightness(1.07);
 }
 
+.generate-button:disabled {
+  cursor: progress;
+  filter: none;
+  opacity: 0.62;
+}
+
 .interpretation {
   display: none;
   gap: 12px;

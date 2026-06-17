@@ -1,5 +1,8 @@
 const DATA_URL = "songs.json";
 const CACHE_KEY = "behindTheLyrics.libraryCache.v2";
+const OPENAI_API_KEY = "";
+const OPENAI_MODEL = "gpt-4o-mini";
+const OPENAI_CHAT_COMPLETIONS_URL = "https://api.openai.com/v1/chat/completions";
 
 const state = {
   library: createEmptyLibrary(),
@@ -8,6 +11,7 @@ const state = {
   openAlbums: new Set(),
   visibleInterpretations: new Set(),
   editingInterpretations: new Set(),
+  generatingInterpretations: new Set(),
   loadedFrom: "memory",
   fileHandle: null,
   hasUnsavedChanges: false
@@ -500,7 +504,9 @@ function normalizeSong(song) {
     feeling: cleanText(song?.feeling),
     tags: Array.isArray(song?.tags) ? song.tags.map(cleanText).filter(Boolean) : [],
     interpretationDepth: normalizeDepth(song?.interpretationDepth),
-    interpretationStatus: normalizeInterpretationStatus(song?.interpretationStatus, song)
+    interpretationStatus: normalizeInterpretationStatus(song?.interpretationStatus, song),
+    generatedBy: cleanText(song?.generatedBy),
+    generatedAt: cleanText(song?.generatedAt)
   };
 }
 
@@ -525,7 +531,9 @@ function createSong(title) {
     feeling: "",
     tags: [],
     interpretationDepth: 0,
-    interpretationStatus: "not-generated"
+    interpretationStatus: "not-generated",
+    generatedBy: "",
+    generatedAt: ""
   };
 }
 
@@ -564,7 +572,9 @@ function normalizeLibraryWithoutSorting(library) {
           feeling: cleanText(song.feeling),
           tags: Array.isArray(song.tags) ? song.tags.map(cleanText).filter(Boolean) : [],
           interpretationDepth: normalizeDepth(song.interpretationDepth),
-          interpretationStatus: normalizeInterpretationStatus(song.interpretationStatus, song)
+          interpretationStatus: normalizeInterpretationStatus(song.interpretationStatus, song),
+          generatedBy: cleanText(song.generatedBy),
+          generatedAt: cleanText(song.generatedAt)
         })).filter((song) => song.title)
       }))
     })).filter((artist) => artist.name)
@@ -725,6 +735,7 @@ function createSongRow(artistName, albumName, song) {
   const songKey = getSongKey(artistName, albumName, song.title);
   const isVisible = state.visibleInterpretations.has(songKey);
   const isEditing = state.editingInterpretations.has(songKey);
+  const isGenerating = state.generatingInterpretations.has(songKey);
   const interpretationStatus = getInterpretationStatus(song);
   const songRow = document.createElement("article");
   songRow.className = "song-row";
@@ -753,13 +764,10 @@ function createSongRow(artistName, albumName, song) {
     });
     actions.append(toggleButton);
 
-    const regenerateButton = createActionButton("Regenerate");
+    const regenerateButton = createActionButton(isGenerating ? "Generating..." : "Generate Real Interpretation");
+    regenerateButton.disabled = isGenerating;
     regenerateButton.addEventListener("click", async () => {
-      await writeGeneratedInterpretation(artistName, albumName, song.title);
-      state.visibleInterpretations.add(songKey);
-      state.editingInterpretations.delete(songKey);
-      render();
-      setStatus(`Regenerated interpretation for "${song.title}". ${getPersistenceHint()}`);
+      await handleGenerateInterpretation(artistName, albumName, song.title);
     });
     actions.append(regenerateButton);
 
@@ -771,12 +779,10 @@ function createSongRow(artistName, albumName, song) {
     });
     actions.append(editButton);
   } else {
-    const generateButton = createActionButton("Generate interpretation");
+    const generateButton = createActionButton(isGenerating ? "Generating..." : "Generate Real Interpretation");
+    generateButton.disabled = isGenerating;
     generateButton.addEventListener("click", async () => {
-      await writeGeneratedInterpretation(artistName, albumName, song.title);
-      state.visibleInterpretations.add(songKey);
-      render();
-      setStatus(`Generated interpretation for "${song.title}". ${getPersistenceHint()}`);
+      await handleGenerateInterpretation(artistName, albumName, song.title);
     });
     actions.append(generateButton);
   }
@@ -803,6 +809,27 @@ function createActionButton(label) {
   return button;
 }
 
+async function handleGenerateInterpretation(artistName, albumName, songTitle) {
+  const songKey = getSongKey(artistName, albumName, songTitle);
+
+  state.generatingInterpretations.add(songKey);
+  setStatus(`Generating interpretation for "${songTitle}"...`);
+  render();
+
+  try {
+    await writeGeneratedInterpretation(artistName, albumName, songTitle);
+    state.visibleInterpretations.add(songKey);
+    state.editingInterpretations.delete(songKey);
+    setStatus(`Generated interpretation for "${songTitle}". ${getPersistenceHint()}`);
+  } catch (error) {
+    console.error(error);
+    setStatus(error.message || "Could not generate interpretation.");
+  } finally {
+    state.generatingInterpretations.delete(songKey);
+    render();
+  }
+}
+
 async function writeGeneratedInterpretation(artistName, albumName, songTitle) {
   const song = findSong(state.library, artistName, albumName, songTitle);
 
@@ -810,7 +837,7 @@ async function writeGeneratedInterpretation(artistName, albumName, songTitle) {
     return false;
   }
 
-  const generated = generateInterpretation({
+  const generated = await generateRealInterpretation({
     artist: artistName,
     album: albumName,
     title: songTitle
@@ -823,12 +850,192 @@ async function writeGeneratedInterpretation(artistName, albumName, songTitle) {
   song.tags = generated.tags;
   song.interpretationDepth = generated.interpretationDepth;
   song.interpretationStatus = "generated";
+  song.generatedBy = "openai";
+  song.generatedAt = new Date().toISOString();
 
   await persistLibraryChange();
   return true;
 }
 
-function generateInterpretation(song) {
+async function generateRealInterpretation(song) {
+  if (!OPENAI_API_KEY.trim()) {
+    throw new Error("OpenAI API key is missing.");
+  }
+
+  const response = await fetch(OPENAI_CHAT_COMPLETIONS_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${OPENAI_API_KEY}`
+    },
+    body: JSON.stringify({
+      model: OPENAI_MODEL,
+      temperature: 0.35,
+      response_format: { type: "json_object" },
+      messages: [
+        {
+          role: "system",
+          content: "You are a music analyst and cultural commentator. Return only valid JSON and never quote song lyrics."
+        },
+        {
+          role: "user",
+          content: createInterpretationPrompt(song)
+        }
+      ]
+    })
+  });
+
+  if (!response.ok) {
+    let details = "";
+
+    try {
+      const errorBody = await response.json();
+      details = errorBody?.error?.message ? ` ${errorBody.error.message}` : "";
+    } catch (error) {
+      details = "";
+    }
+
+    throw new Error(`OpenAI API request failed (${response.status}).${details}`);
+  }
+
+  const data = await response.json();
+  const content = data?.choices?.[0]?.message?.content;
+
+  if (!content) {
+    throw new Error("OpenAI API returned an empty response.");
+  }
+
+  return normalizeGeneratedInterpretation(parseInterpretationJson(content));
+}
+
+function createInterpretationPrompt(song) {
+  const artist = song.artist || "Unknown Artist";
+  const album = song.album || "Unknown Album";
+  const title = song.title || "Untitled";
+
+  return `You are a music analyst and cultural commentator.
+
+Your task is to create a high-quality song interpretation for a public website called "Behind The Lyrics".
+
+The goal is NOT to invent meanings.
+
+The goal is to provide a thoughtful and plausible interpretation based on:
+
+* the artist
+* the album
+* the song title
+* known themes in the artist's work
+* historical and cultural context
+* commonly discussed interpretations
+
+IMPORTANT RULES:
+
+* Never quote song lyrics.
+* Never invent facts.
+* If information is uncertain, say "may", "can be interpreted as", or "is often understood as".
+* Avoid generic AI phrases.
+* Avoid filler language.
+* Avoid repeating the song title.
+* Write as a knowledgeable music journalist.
+* Make each interpretation clearly distinct from other songs.
+* Prioritize insight over length.
+
+INPUT
+
+Artist: ${artist}
+Album: ${album}
+Song: ${title}
+
+OUTPUT FORMAT
+
+Return ONLY valid JSON.
+
+{
+"summary": "",
+"context": "",
+"interpretation": "",
+"feeling": "",
+"tags": [],
+"interpretationDepth": 1
+}
+
+FIELD REQUIREMENTS
+
+summary:
+One sentence (max 25 words).
+Capture the central idea of the song.
+
+context:
+2-4 sentences.
+Describe where the song fits within the artist's career, album or historical period.
+
+interpretation:
+4-8 sentences.
+Explain the most plausible meaning and themes.
+Discuss symbolism or recurring ideas when relevant.
+
+feeling:
+One short paragraph.
+Describe the emotional atmosphere.
+
+tags:
+3-8 tags.
+Examples:
+["nostalgia","identity","working class","love","alienation","faith","politics"]
+
+interpretationDepth:
+Integer from 1 to 5.
+
+1 = straightforward song
+3 = multiple possible readings
+5 = rich symbolism and extensive interpretation potential
+
+QUALITY TEST
+
+Before returning the result, verify:
+
+* Would this interpretation still make sense if the song title were replaced with another title?
+
+If YES, rewrite it.
+
+* Does the interpretation contain specific observations about this artist, album or song?
+
+If NO, rewrite it.
+
+Return only the JSON object.`;
+}
+
+function parseInterpretationJson(content) {
+  try {
+    return JSON.parse(content);
+  } catch (error) {
+    const jsonStart = content.indexOf("{");
+    const jsonEnd = content.lastIndexOf("}");
+
+    if (jsonStart === -1 || jsonEnd === -1 || jsonEnd <= jsonStart) {
+      throw new Error("OpenAI API response was not valid JSON.");
+    }
+
+    try {
+      return JSON.parse(content.slice(jsonStart, jsonEnd + 1));
+    } catch (parseError) {
+      throw new Error("OpenAI API response was not valid JSON.");
+    }
+  }
+}
+
+function normalizeGeneratedInterpretation(result) {
+  return {
+    summary: cleanText(result?.summary),
+    context: cleanText(result?.context),
+    interpretation: cleanText(result?.interpretation),
+    feeling: cleanText(result?.feeling),
+    tags: Array.isArray(result?.tags) ? result.tags.map(cleanText).filter(Boolean).slice(0, 8) : [],
+    interpretationDepth: Math.max(1, normalizeDepth(result?.interpretationDepth) || 1)
+  };
+}
+
+function generateMockInterpretation(song) {
   const profile = getInterpretationProfile(song);
   const artist = song.artist || "Unknown Artist";
   const album = song.album || "Unknown Album";
